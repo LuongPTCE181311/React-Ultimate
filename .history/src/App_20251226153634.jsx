@@ -4,9 +4,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 const Mycomponent = () => {
-  return (
-    <div>eric & hoidanit</div>
-  ); 
+  return ()
+  
 }
 
 const App = () => {
@@ -23,7 +22,6 @@ const App = () => {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <Mycomponent />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

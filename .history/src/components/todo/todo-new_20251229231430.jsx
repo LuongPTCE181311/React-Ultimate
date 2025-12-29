@@ -8,7 +8,6 @@ const TodoNew = (props) => {
 
   const handleClick = () => {
     addNewTodo(valueInput);
-    setValueInput("");
   };
 
   return (

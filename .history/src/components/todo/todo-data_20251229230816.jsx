@@ -6,8 +6,7 @@ const TodoData = (props) => {
       {todoList.map((name) => {
         // eslint-disable-next-line react/jsx-key
         return (
-          // eslint-disable-next-line react/jsx-key
-          <div className="todo-item">
+          <div className="to">
             <div>{name.name}</div>
             <button>Delete</button>
           </div>

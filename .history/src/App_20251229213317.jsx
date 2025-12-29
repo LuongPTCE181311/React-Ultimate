@@ -10,8 +10,8 @@ const App = () => {
     country: "vietnam",
   };
 
-  const addNewTodo = (name) => {
-    alert(`call mee ${name}`)
+  const addNewTodo = () => {
+    alert("call mee")
   }
   return (
     <>

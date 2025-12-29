@@ -11,7 +11,7 @@ const App = () => {
   };
 
   const addNewTodo = (name) => {
-    alert(`call mee ${name}`)
+    alert(`call mee `)
   }
   return (
     <>

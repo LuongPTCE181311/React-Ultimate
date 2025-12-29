@@ -1,7 +1,7 @@
 const TodoNew = (props) => {
   // eslint-disable-next-line react/prop-types
   const { addNewTodo } = props;
-  addNewTodo("eric");
+  addNewTodo();
   return (
     <div className="todo-new">
       <input type="text" />

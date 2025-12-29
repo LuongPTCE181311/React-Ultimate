@@ -1,9 +1,9 @@
 import './style.css'
 
 const Mycomponent = () => {
-    const luong = "huhu";
+    const luong =- 
     return ( 
-        <div className="child"> {luong} & hi loo</div>
+        <div className="child">hi loo</div>
      );
 }
  

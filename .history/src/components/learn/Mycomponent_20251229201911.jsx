@@ -3,7 +3,7 @@ import './style.css'
 const Mycomponent = () => {
     const luong = "huhu";
     return ( 
-        <div className="child"> {luong} & hi loo</div>
+        <div className="child">hi loo</div>
      );
 }
  

@@ -11,7 +11,7 @@ const App = () => {
         <TodoNew />
         <TodoData />
         <div className="todo-image">
-          <img src={reactLogo} alt="" className="logo"/>
+          <img src={reactLogo} alt="" />
         </div>
       </div>
     </>

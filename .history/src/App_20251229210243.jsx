@@ -1,7 +1,7 @@
 import TodoData from "./components/todo/todo-data";
 import TodoNew from "./components/todo/todo-new";
 import "./components/todo/todo.css"
-import reactLogo from './assets/react.svg'
+import reactLogo form ''
 const App = () => {
 
   return (
@@ -11,7 +11,7 @@ const App = () => {
         <TodoNew />
         <TodoData />
         <div className="todo-image">
-          <img src={reactLogo} alt="" className="logo"/>
+          <img src="" alt="" />
         </div>
       </div>
     </>

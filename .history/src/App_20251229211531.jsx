@@ -1,26 +1,23 @@
 import TodoData from "./components/todo/todo-data";
 import TodoNew from "./components/todo/todo-new";
-import "./components/todo/todo.css";
-import reactLogo from "./assets/react.svg";
+import "./components/todo/todo.css"
+import reactLogo from './assets/react.svg'
 const App = () => {
-  const hoidanit = "eric";
+  const hoidanit = "eric"
   const age = 21;
-  const data = {
-    address: "baclieu",
-    country: "vietnam",
-  };
   return (
     <>
       <div className="toto-container">
         <div className="todo-title">Todo List</div>
         <TodoNew />
-        <TodoData name={hoidanit} age={age} data={data}/>
+        <TodoData 
+        name={hoidanit}/>
         <div className="todo-image">
-          <img src={reactLogo} alt="" className="logo" />
+          <img src={reactLogo} alt="" className="logo"/>
         </div>
       </div>
     </>
   );
-};
+}
 
 export default App;

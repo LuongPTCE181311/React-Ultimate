@@ -14,7 +14,7 @@ const App = () => {
       <div className="toto-container">
         <div className="todo-title">Todo List</div>
         <TodoNew />
-        <TodoData name={hoidanit} age={age} data={data}/>
+        <TodoData name={hoidanit} age={age} />
         <div className="todo-image">
           <img src={reactLogo} alt="" className="logo" />
         </div>

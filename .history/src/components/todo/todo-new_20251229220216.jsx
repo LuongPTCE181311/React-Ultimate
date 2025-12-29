@@ -6,12 +6,12 @@ const TodoNew = (props) => {
     alert("huhuh");
   };
 
-  const handleOnChange = (name) => {
-    console.log("handleOnchange", name);
+  const handleOnChange = (event) => {
+    console.log("handleOnchange", event.target.value);
   };
   return (
     <div className="todo-new">
-      <input type="text" onChange={(event) => {handleOnChange(event.target.value)}} />
+      <input type="text" onChange={handleOnChange} />
       <button id="addBtn" onClick={handleClick} style={{ cursor: "pointer" }}>
         Add
       </button>

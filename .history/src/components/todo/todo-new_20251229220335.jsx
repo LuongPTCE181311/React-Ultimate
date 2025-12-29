@@ -1,6 +1,6 @@
 const TodoNew = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { addNewTodo } = props;
+  
 
   const handleClick = () => {
     alert("huhuh");
@@ -11,7 +11,7 @@ const TodoNew = (props) => {
   };
   return (
     <div className="todo-new">
-      <input type="text" onChange={(event) => {handleOnChange(event.target.value)}} />
+      <input type="text" onChange={handleOnChange} />
       <button id="addBtn" onClick={handleClick} style={{ cursor: "pointer" }}>
         Add
       </button>

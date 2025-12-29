@@ -7,7 +7,11 @@ const TodoNew = (props) => {
   const [valueInput, setValueInput] = useState("");
 
   const handleClick = () => {
-    addNewTodo(valueInput);
+    const newTodo = {
+        id: 3,
+        name: valueInput
+    }
+    addNewTodo(new);
   };
  
   return (

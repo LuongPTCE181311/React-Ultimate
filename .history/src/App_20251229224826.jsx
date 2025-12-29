@@ -18,9 +18,9 @@ const App = () => {
 
   const addNewTodo = (name) => {
     const newTodo = {
-      id: randomIntFromInterval(1, 1000000000),
-      name: name,
-    };
+        id: randomIntFromInterval(),
+        name: name
+    }
     setTodoList([...todoList, newTodo]);
   };
 

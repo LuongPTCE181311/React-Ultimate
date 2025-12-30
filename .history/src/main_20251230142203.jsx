@@ -6,22 +6,15 @@ import LoginPage from "./pages/login.jsx";
 import RegisterPage from "./pages/register.jsx";
 import UsersPage from "./pages/users.jsx";
 import ProductsPage from "./pages/products.jsx";
-import "./styles/global.css";
+import './styles/global.css'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "/users",
-        element: <UsersPage />,
-      },
-      {
-        path: "/products",
-        element: <ProductsPage />,
-      },
-    ],
+      
+    ]
   },
   {
     path: "/login",
@@ -31,6 +24,14 @@ const router = createBrowserRouter([
     path: "/register",
     element: <RegisterPage />,
   },
+  {
+    path: "/users",
+    element: <UsersPage />,
+  },
+  {
+    path: "/products",
+    element: <ProductsPage />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

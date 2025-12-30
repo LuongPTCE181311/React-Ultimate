@@ -3,16 +3,17 @@ const TodoData = (props) => {
   const { todoList } = props;
   return (
     <div className="todo-data">
-      {todoList.map((name) => {
+      {todoList.map((name, index) => {
         // eslint-disable-next-line react/jsx-key
         return (
           // eslint-disable-next-line react/jsx-key
-          <div className={`todo-item`} key={name.id}>
+          <div className={`todo`}>
             <div>{name.name}</div>
             <button>Delete</button>
           </div>
         );
       })}
+      <div>{JSON.stringify(todoList)}</div>
     </div>
   );
 };

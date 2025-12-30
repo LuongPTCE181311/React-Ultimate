@@ -13,6 +13,7 @@ const TodoData = (props) => {
           </div>
         );
       })}
+      <div>{JSON.stringify(todoList)}</div>
     </div>
   );
 };

@@ -7,12 +7,13 @@ const TodoData = (props) => {
         // eslint-disable-next-line react/jsx-key
         return (
           // eslint-disable-next-line react/jsx-key
-          <div className={`todo-item`} key={name.id}>
+          <div className={`todo-item`}>
             <div>{name.name}</div>
             <button>Delete</button>
           </div>
         );
       })}
+      <div>{JSON.stringify(todoList)}</div>
     </div>
   );
 };

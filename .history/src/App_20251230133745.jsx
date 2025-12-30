@@ -23,8 +23,7 @@ const App = () => {
   }
 
   const handleDelete = (id) => {
-    const newDeleteTodo = todoList.filter((value) => value.id !== id);
-    setTodoList(newDeleteTodo);
+    alert
   }
 
   return (
@@ -37,7 +36,7 @@ const App = () => {
             <img src={reactLogo} alt="" className="logo" />
           </div>
         )}
-        {todoList.length > 0 && <TodoData todoList={todoList} handleDelete={handleDelete}/>}
+        {todoList.length > 0 && <TodoData todoList={todoList} />}
       </div>
     </>
   );

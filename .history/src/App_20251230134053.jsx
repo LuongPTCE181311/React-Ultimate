@@ -23,8 +23,7 @@ const App = () => {
   }
 
   const handleDelete = (id) => {
-    const newDeleteTodo = todoList.filter((value) => value.id !== id);
-    setTodoList(newDeleteTodo);
+    const newDeleteTodo = todoList.filter((value) => value.id !== id)
   }
 
   return (

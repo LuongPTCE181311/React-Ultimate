@@ -22,9 +22,8 @@ const App = () => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  const handleDelete = (id) => {
-    const newDeleteTodo = todoList.filter((value) => value.id !== id);
-    setTodoList(newDeleteTodo);
+  const handleDelete = () => {
+    
   }
 
   return (
@@ -37,7 +36,7 @@ const App = () => {
             <img src={reactLogo} alt="" className="logo" />
           </div>
         )}
-        {todoList.length > 0 && <TodoData todoList={todoList} handleDelete={handleDelete}/>}
+        {todoList.length > 0 && <TodoData todoList={todoList} />}
       </div>
     </>
   );

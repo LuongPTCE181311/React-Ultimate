@@ -17,7 +17,7 @@ const UserForm = () => {
             description: "tao user thanh cong"
         })
     }
-    console.log("check ress >>>>>>>>>", res.data);
+    console.log("check ress >>>>>>>>>", res.data.data);
   };
   return (
     <div className="user-form" style={{ margin: "20px 0" }}>

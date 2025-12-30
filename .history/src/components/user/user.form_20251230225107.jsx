@@ -20,7 +20,7 @@ const UserForm = () => {
     }else{
         notification.error({
             message: "create user",
-            description: JSON.stringify(res.message)
+            description
         })
     }
     console.log("check ress >>>>>>>>>", res.data);

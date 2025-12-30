@@ -1,5 +1,4 @@
 import { Flex, Space, Table, Tag } from "antd";
-import { fetchAllUserAPI } from "../../services/apiservice";
 
 const Usertable = () => {
   const columns = [
@@ -73,11 +72,7 @@ const Usertable = () => {
       tags: ["cool", "teacher"],
     },
   ];
-  const loadUser = () => {
-    fetchAllUserAPI();
-  }
-
-  loadUser();
+  const 
   return <Table columns={columns} dataSource={data} />;
 };
 

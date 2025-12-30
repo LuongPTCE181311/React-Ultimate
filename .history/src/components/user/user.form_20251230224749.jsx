@@ -10,17 +10,12 @@ const UserForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleClickBtn = async () => {
-
+    
     const res = await createUserAPI(fullName, email, password, phoneNumber);
     if(res.data){
         notification.success({
             message: "create user",
             description: "tao user thanh cong"
-        })
-    }else{
-        notification.error({
-            message: "create user",
-            description: JSON.stringify(res.message)
         })
     }
     console.log("check ress >>>>>>>>>", res.data);

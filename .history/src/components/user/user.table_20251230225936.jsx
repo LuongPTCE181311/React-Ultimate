@@ -77,7 +77,7 @@ const Usertable = () => {
     fetchAllUserAPI();
   }
 
-  loadUser();
+  loadUser()
   return <Table columns={columns} dataSource={data} />;
 };
 

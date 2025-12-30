@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./header.css";
 const Header = () => {
   return (
-    <ul className="hoidanit">
+    <ul class>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>

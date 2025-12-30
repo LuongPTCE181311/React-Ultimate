@@ -6,24 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <div>Hello world!</div>,
   },
-  {
-    path: "/login",
-    element: <div>Login page</div>,
-  },
-  {
-    path: "/register",
-    element: <div>Register page</div>,
-  },
-  {
-    path: "/users",
-    element: <div>User page</div>,
-  },
-  {
-    path: "/products",
-    element: <div>Products page</div>
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

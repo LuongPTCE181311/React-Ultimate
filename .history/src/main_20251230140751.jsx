@@ -5,8 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from "./pages/login.jsx";
 import RegisterPage from "./pages/register.jsx";
 import UsersPage from "./pages/users.jsx";
-import ProductsPage from "./pages/products.jsx";
-import './styles/global.css'
+import BookPage from "./pages/products.jsx";
+import "./styles/global.css";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/products",
-    element: <ProductsPage />
-  }
+    element: <BookPage />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

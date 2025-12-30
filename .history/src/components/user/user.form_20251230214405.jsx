@@ -10,13 +10,9 @@ const UserForm = () => {
 
   const handleClickBtn = () => {
     const URL_BACKEND = "http://localhost:8080/api/v1/user";
-    const data = {
-      fullName: fullName,
-      email: email,
-      password: password,
-      phone: phoneNumber,
-    };
-    axios.post(URL_BACKEND, data);
+    const data = 
+    axios.post();
+    alert(fullName + email + password + phoneNumber);
   };
   return (
     <div className="user-form" style={{ margin: "20px 0" }}>

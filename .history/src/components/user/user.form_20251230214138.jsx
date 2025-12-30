@@ -1,6 +1,6 @@
 import { Button, Input } from "antd";
 import { useState } from "react";
-import axios from "axios";
+import moduleName from 'module'
 
 const UserForm = () => {
   const [fullName, setFullName] = useState("");
@@ -9,15 +9,8 @@ const UserForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleClickBtn = () => {
-    const URL_BACKEND = "http://localhost:8080/api/v1/user";
-    const data = {
-      fullName: fullName,
-      email: email,
-      password: password,
-      phone: phoneNumber,
-    };
-    axios.post(URL_BACKEND, data);
-  };
+    alert(fullName + email + password + phoneNumber)
+  }
   return (
     <div className="user-form" style={{ margin: "20px 0" }}>
       <div style={{ display: "flex", gap: "15px", flexDirection: "column" }}>
@@ -40,9 +33,7 @@ const UserForm = () => {
           <Input onChange={(phone) => setPhoneNumber(phone.target.value)} />
         </div>
         <div>
-          <Button type="primary" onClick={() => handleClickBtn()}>
-            Create user
-          </Button>
+          <Button type="primary" onClick={() => handleClickBtn()}>Create user</Button>
         </div>
       </div>
     </div>

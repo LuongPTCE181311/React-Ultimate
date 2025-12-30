@@ -17,6 +17,7 @@ const UserForm = () => {
       phone: phoneNumber,
     };
     axios.post(URL_BACKEND, data);
+    
   };
   return (
     <div className="user-form" style={{ margin: "20px 0" }}>

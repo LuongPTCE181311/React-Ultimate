@@ -1,7 +1,12 @@
-
+import TodoData from "./components/todo/todo-data";
+import TodoNew from "./components/todo/todo-new";
+import "./components/todo/todo.css";
+import reactLogo from "./assets/react.svg";
+import { useState } from "react";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
 import { Outlet } from "react-router-dom";
+
 
 const App = () => {
   return (

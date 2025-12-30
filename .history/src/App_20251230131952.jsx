@@ -32,7 +32,7 @@ const App = () => {
             <img src={reactLogo} alt="" className="logo" />
           </div>
         )}
-        {todoList.length > 0 && <TodoData todoList={todoList} />}
+        <TodoData todoList={todoList} />
       </div>
     </>
   );

@@ -32,7 +32,8 @@ const App = () => {
             <img src={reactLogo} alt="" className="logo" />
           </div>
         )}
-        {todoList.length > 0 && <TodoData todoList={todoList} />}
+        {todoList.length >==}
+        <TodoData todoList={todoList} />
       </div>
     </>
   );

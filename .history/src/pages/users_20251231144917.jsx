@@ -17,8 +17,8 @@ const UsersPage = () => {
   };
   return (
     <div style={{padding: "20px"}}>
-      <UserForm loadUser={loadUser}/>
-      <Usertable dataUsers={dataUsers}/>
+      <UserForm />
+      <Usertable dataUsers={data}/>
     </div>
   );
 };

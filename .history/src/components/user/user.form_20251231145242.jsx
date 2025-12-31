@@ -1,3 +1,4 @@
+
 import { Button, Input, Modal, notification } from "antd";
 import { useState } from "react";
 import { createUserAPI } from "../../services/apiservice";
@@ -8,9 +9,8 @@ const UserForm = (props) => {
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // eslint-disable-next-line react/prop-types
-  const { loadUser } = props;
+  
+  const {loadUser} = props
   const handleClickBtn = async () => {
     const res = await createUserAPI(fullName, email, password, phoneNumber);
     if (res.data) {
@@ -19,7 +19,6 @@ const UserForm = (props) => {
         description: "tao user thanh cong",
       });
       resetCloseModel();
-      await loadUser();
     } else {
       notification.error({
         message: "create user",
@@ -59,31 +58,21 @@ const UserForm = (props) => {
         <div style={{ display: "flex", gap: "10px", flexDirection: "column" }}>
           <div>
             <span>FullName</span>
-            <Input
-              onChange={(name) => setFullName(name.target.value)}
-              value={fullName}
-            />
+            <Input onChange={(name) => setFullName(name.target.value)} value={fullName}/>
           </div>
           <div>
             <span>Email</span>
-            <Input
-              onChange={(email) => setEmail(email.target.value)}
-              value={email}
-            />
+            <Input onChange={(email) => setEmail(email.target.value)} value={email}/>
           </div>
           <div>
             <span>Password</span>
             <Input.Password
-              onChange={(password) => setPassword(password.target.value)}
-              value={password}
+              onChange={(password) => setPassword(password.target.value)} value={password}
             />
           </div>
           <div>
             <span>Phone number</span>
-            <Input
-              onChange={(phone) => setPhoneNumber(phone.target.value)}
-              value={phoneNumber}
-            />
+            <Input onChange={(phone) => setPhoneNumber(phone.target.value)} value={phoneNumber}/>
           </div>
         </div>
       </Modal>

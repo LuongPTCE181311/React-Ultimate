@@ -9,7 +9,6 @@ const UserForm = (props) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // eslint-disable-next-line react/prop-types
   const { loadUser } = props;
   const handleClickBtn = async () => {
     const res = await createUserAPI(fullName, email, password, phoneNumber);

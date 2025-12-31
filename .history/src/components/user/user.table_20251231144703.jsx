@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import { Table } from "antd";
+import { fetchAllUserAPI } from "../../services/apiservice";
 
-const Usertable = (props) => {
-  const { dataUsers } = props;
+
+const Usertable = () => {
   const columns = [
     {
       title: "Id",
@@ -41,6 +41,10 @@ const Usertable = (props) => {
   //     tags: ["cool", "teacher"],
   //   },
   // ];
+  const loadUser = async () => {
+    const res = await fetchAllUserAPI();
+    setDataUsers(res.data);
+  };
 
   console.log("render  111");
   return <Table columns={columns} dataSource={dataUsers} rowKey={"_id"} />;

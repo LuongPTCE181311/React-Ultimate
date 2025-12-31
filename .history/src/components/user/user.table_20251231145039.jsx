@@ -2,7 +2,7 @@
 import { Table } from "antd";
 
 const Usertable = (props) => {
-  const { dataUsers } = props;
+  const {dataUsers} = props;
   const columns = [
     {
       title: "Id",
@@ -41,6 +41,7 @@ const Usertable = (props) => {
   //     tags: ["cool", "teacher"],
   //   },
   // ];
+  
 
   console.log("render  111");
   return <Table columns={columns} dataSource={dataUsers} rowKey={"_id"} />;

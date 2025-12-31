@@ -17,7 +17,7 @@ const UpdateUserModal = (props) => {
       setFullName(dataUpdate.fullName);
       setPhoneNumber(dataUpdate.phone);
     }
-  }, [dataUpdate]);
+  }, []);
   const handleClickBtn = async () => {
     const res = await createUserAPI(fullName, email, password, phoneNumber);
     if (res.data) {
@@ -41,7 +41,6 @@ const UpdateUserModal = (props) => {
     setFullName("");
     setPhoneNumber("");
     setId("");
-    setDataUpdate(null)
   };
   return (
     <Modal
@@ -65,6 +64,7 @@ const UpdateUserModal = (props) => {
             value={fullName}
           />
         </div>
+        
         <div>
           <span>Phone number</span>
           <Input

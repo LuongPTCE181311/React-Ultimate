@@ -17,7 +17,7 @@ const UpdateUserModal = (props) => {
       setFullName(dataUpdate.fullName);
       setPhoneNumber(dataUpdate.phone);
     }
-  }, [dataUpdate]);
+  }, []);
   const handleClickBtn = async () => {
     const res = await createUserAPI(fullName, email, password, phoneNumber);
     if (res.data) {
@@ -40,8 +40,7 @@ const UpdateUserModal = (props) => {
     setIsModalUpdateOpen(false);
     setFullName("");
     setPhoneNumber("");
-    setId("");
-    setDataUpdate(null)
+    setId("")
   };
   return (
     <Modal
@@ -55,14 +54,23 @@ const UpdateUserModal = (props) => {
     >
       <div style={{ display: "flex", gap: "10px", flexDirection: "column" }}>
         <div>
-          <span>Id</span>
-          <Input value={id} disabled />
-        </div>
-        <div>
           <span>FullName</span>
           <Input
             onChange={(name) => setFullName(name.target.value)}
             value={fullName}
+          />
+        </div>
+        <div>
+          <span>Id</span>
+          <Input
+            value={id}
+          />
+        </div>
+        <div>
+          <span>Password</span>
+          <Input.Password
+            onChange={(password) => setPassword(password.target.value)}
+            value={password}
           />
         </div>
         <div>

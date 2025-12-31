@@ -32,10 +32,7 @@ const Usertable = (props) => {
         <div style={{ display: "flex", gap: "20px" }}>
           <EditOutlined
             style={{ cursor: "pointer", color: "orange" }}
-            onClick={() => {
-              setIsModalUpdateOpen(true);
-              setDataUpdate(record);
-            }}
+            onClick={() => setIsModalUpdateOpen(true)}
           />
           <DeleteOutlined style={{ cursor: "pointer", color: "red" }} />
         </div>
@@ -74,7 +71,7 @@ const Usertable = (props) => {
         isModalUpdateOpen={isModalUpdateOpen}
         setIsModalUpdateOpen={setIsModalUpdateOpen}
         dataUpdate={dataUpdate}
-        setDataUpdate={setDataUpdate}
+        
       />
     </>
   );

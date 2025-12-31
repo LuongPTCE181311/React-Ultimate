@@ -41,7 +41,7 @@ const UpdateUserModal = (props) => {
     setFullName("");
     setPhoneNumber("");
     setId("");
-    setDataUpdate(null)
+    setDataUpdate
   };
   return (
     <Modal

@@ -5,19 +5,16 @@ import { createUserAPI } from "../../services/apiservice";
 
 const UpdateUserModal = (props) => {
   const [fullName, setFullName] = useState("");
-  const [id, setId] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const { isModalUpdateOpen, setIsModalUpdateOpen, dataUpdate, setDataUpdate } =
     props;
 
   useEffect(() => {
-    if (dataUpdate) {
-      setId(dataUpdate._id);
-      setFullName(dataUpdate.fullName);
-      setPhoneNumber(dataUpdate.phone);
-    }
-  }, [dataUpdate]);
+    if(data)
+  }, []);
   const handleClickBtn = async () => {
     const res = await createUserAPI(fullName, email, password, phoneNumber);
     if (res.data) {
@@ -39,9 +36,9 @@ const UpdateUserModal = (props) => {
   const resetCloseModel = () => {
     setIsModalUpdateOpen(false);
     setFullName("");
+    setEmail("");
+    setPassword("");
     setPhoneNumber("");
-    setId("");
-    setDataUpdate(null)
   };
   return (
     <Modal
@@ -55,14 +52,24 @@ const UpdateUserModal = (props) => {
     >
       <div style={{ display: "flex", gap: "10px", flexDirection: "column" }}>
         <div>
-          <span>Id</span>
-          <Input value={id} disabled />
-        </div>
-        <div>
           <span>FullName</span>
           <Input
             onChange={(name) => setFullName(name.target.value)}
             value={fullName}
+          />
+        </div>
+        <div>
+          <span>Email</span>
+          <Input
+            onChange={(email) => setEmail(email.target.value)}
+            value={email}
+          />
+        </div>
+        <div>
+          <span>Password</span>
+          <Input.Password
+            onChange={(password) => setPassword(password.target.value)}
+            value={password}
           />
         </div>
         <div>

@@ -33,9 +33,7 @@ const Usertable = (props) => {
           <EditOutlined
             style={{ cursor: "pointer", color: "orange" }}
             onClick={() => {
-              setIsModalUpdateOpen(true);
-              setDataUpdate(record);
-            }}
+              setIsModalUpdateOpen(true)}}
           />
           <DeleteOutlined style={{ cursor: "pointer", color: "red" }} />
         </div>

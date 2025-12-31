@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Input, Modal, notification } from "antd";
 import { useEffect, useState } from "react";
-import { updateUserAPI } from "../../services/apiservice";
+import { createUserAPI, updateUserAPI } from "../../services/apiservice";
 
 const UpdateUserModal = (props) => {
   const [fullName, setFullName] = useState("");
   const [id, setId] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const { loadUser } = props;
 
   const { isModalUpdateOpen, setIsModalUpdateOpen, dataUpdate, setDataUpdate } =
     props;
@@ -20,17 +19,17 @@ const UpdateUserModal = (props) => {
     }
   }, [dataUpdate]);
   const handleClickBtn = async () => {
-    const res = await updateUserAPI(id, fullName, phoneNumber);
+    const res = await updateUserAPI(fullName, email, password, phoneNumber);
     if (res.data) {
       notification.success({
-        message: "Update user",
-        description: "cap nhat user thanh cong",
+        message: "create user",
+        description: "tao user thanh cong",
       });
       resetCloseModel();
-      await loadUser();
+      //   await loadUser();
     } else {
       notification.error({
-        message: "Update user",
+        message: "create user",
         description: JSON.stringify(res.message),
       });
     }
@@ -42,7 +41,7 @@ const UpdateUserModal = (props) => {
     setFullName("");
     setPhoneNumber("");
     setId("");
-    setDataUpdate(null);
+    setDataUpdate(null)
   };
   return (
     <Modal

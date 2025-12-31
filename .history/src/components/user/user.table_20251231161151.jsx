@@ -75,7 +75,7 @@ const Usertable = (props) => {
         setIsModalUpdateOpen={setIsModalUpdateOpen}
         dataUpdate={dataUpdate}
         setDataUpdate={setDataUpdate}
-        loadUser={loadUser}
+        load
       />
     </>
   );

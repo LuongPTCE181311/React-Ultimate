@@ -7,7 +7,6 @@ const UpdateUserModal = (props) => {
   const [fullName, setFullName] = useState("");
   const [id, setId] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const { loadUser } = props;
 
   const { isModalUpdateOpen, setIsModalUpdateOpen, dataUpdate, setDataUpdate } =
     props;
@@ -24,13 +23,13 @@ const UpdateUserModal = (props) => {
     if (res.data) {
       notification.success({
         message: "Update user",
-        description: "cap nhat user thanh cong",
+        description: "tao user thanh cong",
       });
       resetCloseModel();
-      await loadUser();
+      //   await loadUser();
     } else {
       notification.error({
-        message: "Update user",
+        message: "create user",
         description: JSON.stringify(res.message),
       });
     }
@@ -42,7 +41,7 @@ const UpdateUserModal = (props) => {
     setFullName("");
     setPhoneNumber("");
     setId("");
-    setDataUpdate(null);
+    setDataUpdate(null)
   };
   return (
     <Modal

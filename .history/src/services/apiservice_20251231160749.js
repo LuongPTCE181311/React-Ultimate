@@ -14,7 +14,7 @@ const createUserAPI = (fullName, email, password, phone) => {
 const updateUserAPI = (_id, fullName, phone) => {
   const URL_BACKEND = "/api/v1/user";
   const data = {
-    _id: _id,
+    _id: id,
     fullName: fullName,
     phone: phone,
   };

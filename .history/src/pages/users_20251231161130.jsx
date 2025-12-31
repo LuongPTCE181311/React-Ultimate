@@ -16,9 +16,9 @@ const UsersPage = () => {
     setDataUsers(res.data);
   };
   return (
-    <div style={{ padding: "20px" }}>
-      <UserForm loadUser={loadUser} />
-      <Usertable dataUsers={dataUsers} loadUser={loadUser} />
+    <div style={{padding: "20px"}}>
+      <UserForm loadUser={loadUser}/>
+      <Usertable dataUsers={dataUsers} loa/>
     </div>
   );
 };

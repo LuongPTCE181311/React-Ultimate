@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
-import UpdateUserModal from "./update.user.modal";
 
 const Usertable = (props) => {
   const { dataUsers } = props;
@@ -10,9 +7,7 @@ const Usertable = (props) => {
     {
       title: "Id",
       dataIndex: "_id",
-      render: (_, record) => {
-        return <a href="#">{record._id}</a>;
-      },
+      render: (text) => <a>{text}</a>,
     },
     {
       title: "Full Name",
@@ -26,10 +21,10 @@ const Usertable = (props) => {
       title: "Action",
       key: "action",
       render: (_, record) => (
-        <div style={{ display: "flex", gap: "20px" }}>
-          <EditOutlined style={{ cursor: "pointer", color: "orange" }} />
-          <DeleteOutlined style={{ cursor: "pointer", color: "red" }} />
-        </div>
+        <>
+          <a>Invite {record.name}</a>
+          <a>Delete</a>
+        </>
       ),
     },
   ];
@@ -58,12 +53,7 @@ const Usertable = (props) => {
   // ];
 
   console.log("render  111");
-  return (
-    <>
-      <Table columns={columns} dataSource={dataUsers} rowKey={"_id"} />
-      <UpdateUserModal />
-    </>
-  );
+  return <Table columns={columns} dataSource={dataUsers} rowKey={"_id"} />;
 };
 
 export default Usertable;

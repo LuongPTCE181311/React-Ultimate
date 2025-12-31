@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
-import UpdateUserModal from "./update.user.modal";
 
 const Usertable = (props) => {
   const { dataUsers } = props;
@@ -61,7 +60,6 @@ const Usertable = (props) => {
   return (
     <>
       <Table columns={columns} dataSource={dataUsers} rowKey={"_id"} />
-      <UpdateUserModal />
     </>
   );
 };

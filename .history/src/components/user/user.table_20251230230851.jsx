@@ -1,29 +1,24 @@
-import { Table } from "antd";
+import { Flex, Space, Table, Tag } from "antd";
 import { fetchAllUserAPI } from "../../services/apiservice";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Usertable = () => {
   const [dataUsers, setDataUsers] = useState([]);
-
-  useEffect(() => {
-    console.log("render  000");
-    loadUser();
-  }, []);
-
   const columns = [
     {
-      title: "Id",
-      dataIndex: "_id",
+      title: "Name",
+      dataIndex: "name",
       render: (text) => <a>{text}</a>,
     },
     {
-      title: "Full Name",
-      dataIndex: "fullName",
+      title: "Age",
+      dataIndex: "age",
     },
     {
-      title: "Email",
-      dataIndex: "email",
+      title: "Address",
+      dataIndex: "address",
     },
+    
   ];
   // const data = [
   //   {
@@ -50,11 +45,11 @@ const Usertable = () => {
   // ];
   const loadUser = async () => {
     const res = await fetchAllUserAPI();
-    setDataUsers(res.data)
+    console.log("run loader : ", res);
   };
 
-  console.log("render  111");
-  return <Table columns={columns} dataSource={dataUsers} rowKey={"_id"}/>;
+  loadUser();
+  return <Table columns={columns} dataSource={dataUsers} />;
 };
 
 export default Usertable;

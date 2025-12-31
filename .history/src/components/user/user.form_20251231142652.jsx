@@ -16,7 +16,6 @@ const UserForm = () => {
         message: "create user",
         description: "tao user thanh cong",
       });
-      setIsModalOpen(false);
     } else {
       notification.error({
         message: "create user",
@@ -39,7 +38,7 @@ const UserForm = () => {
         title="Create User"
         closable={{ "aria-label": "Custom Close Button" }}
         open={isModalOpen}
-        onOk={() => handleClickBtn()}
+        onOk={() => handleClickBtn}
         onCancel={() => setIsModalOpen(false)}
         maskClosable={false}
         okText={"Create"}

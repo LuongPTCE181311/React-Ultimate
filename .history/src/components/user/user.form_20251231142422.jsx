@@ -10,27 +10,27 @@ const UserForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClickBtn = async () => {
-    const res = await createUserAPI(fullName, email, password, phoneNumber);
-    if (res.data) {
-      notification.success({
-        message: "create user",
-        description: "tao user thanh cong",
-      });
-      setIsModalOpen(false);
-    } else {
-      notification.error({
-        message: "create user",
-        description: JSON.stringify(res.message),
-      });
-    }
-    console.log("check ress >>>>>>>>>", res.data);
+    setIsModalOpen(true);
+    // const res = await createUserAPI(fullName, email, password, phoneNumber);
+    // if (res.data) {
+    //   notification.success({
+    //     message: "create user",
+    //     description: "tao user thanh cong",
+    //   });
+    // } else {
+    //   notification.error({
+    //     message: "create user",
+    //     description: JSON.stringify(res.message),
+    //   });
+    // }
+    // console.log("check ress >>>>>>>>>", res.data);
   };
   return (
     <div className="user-form" style={{ margin: "10px 0" }}>
       <div style={{ display: "flex", gap: "15px", flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h2>Table Users</h2>
-          <Button type="primary" onClick={() => setIsModalOpen(true)}>
+          <Button type="primary" onClick={() => handleClickBtn()}>
             Create user
           </Button>
         </div>
@@ -39,10 +39,9 @@ const UserForm = () => {
         title="Create User"
         closable={{ "aria-label": "Custom Close Button" }}
         open={isModalOpen}
-        onOk={() => handleClickBtn()}
+        onOk={() => alert()}
         onCancel={() => setIsModalOpen(false)}
         maskClosable={false}
-        okText={"Create"}
       >
         <div style={{ display: "flex", gap: "10px", flexDirection: "column" }}>
           <div>

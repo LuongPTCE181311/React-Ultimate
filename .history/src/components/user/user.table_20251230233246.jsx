@@ -1,4 +1,4 @@
-import { Table } from "antd";
+import { Flex, Space, Table, Tag } from "antd";
 import { fetchAllUserAPI } from "../../services/apiservice";
 import { useEffect, useState } from "react";
 
@@ -7,6 +7,7 @@ const Usertable = () => {
 
   useEffect(() => {
     console.log("render  000");
+    
     loadUser();
   }, []);
 
@@ -54,6 +55,8 @@ const Usertable = () => {
   };
 
   console.log("render  111");
+
+  
   return <Table columns={columns} dataSource={dataUsers} rowKey={"_id"}/>;
 };
 

@@ -16,7 +16,6 @@ const UserForm = () => {
         message: "create user",
         description: "tao user thanh cong",
       });
-      setIsModalOpen(false);
     } else {
       notification.error({
         message: "create user",

@@ -16,7 +16,6 @@ const UserForm = () => {
         message: "create user",
         description: "tao user thanh cong",
       });
-      setIsModalOpen(false);
     } else {
       notification.error({
         message: "create user",
@@ -30,7 +29,7 @@ const UserForm = () => {
       <div style={{ display: "flex", gap: "15px", flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h2>Table Users</h2>
-          <Button type="primary" onClick={() => setIsModalOpen(true)}>
+          <Button type="primary" onClick={() => setIsModalOpen}>
             Create user
           </Button>
         </div>
@@ -39,7 +38,7 @@ const UserForm = () => {
         title="Create User"
         closable={{ "aria-label": "Custom Close Button" }}
         open={isModalOpen}
-        onOk={() => handleClickBtn()}
+        onOk={() => alert("me")}
         onCancel={() => setIsModalOpen(false)}
         maskClosable={false}
         okText={"Create"}

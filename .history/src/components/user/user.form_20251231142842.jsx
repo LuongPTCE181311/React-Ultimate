@@ -16,13 +16,13 @@ const UserForm = () => {
         message: "create user",
         description: "tao user thanh cong",
       });
-      setIsModalOpen(false);
     } else {
       notification.error({
         message: "create user",
         description: JSON.stringify(res.message),
       });
     }
+    
     console.log("check ress >>>>>>>>>", res.data);
   };
   return (

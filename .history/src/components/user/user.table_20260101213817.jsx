@@ -34,7 +34,15 @@ const Usertable = (props) => {
       title: "STT",
       render: (_, record, index) => {
         return (
-          <>{index + 1}</>
+          <a
+            href="#"
+            onClick={() => {
+              setOpenDrawerDeatilUser(true);
+              setDataUserDetail(record);
+            }}
+          >
+            {record._id}
+          </a>
         );
       },
     },

@@ -14,29 +14,24 @@ const Usertable = (props) => {
   const [openDrawerDeatilUser, setOpenDrawerDeatilUser] = useState(false);
   const [dataUserDetail, setDataUserDetail] = useState(null);
 
-  const handleDeleteUser = async (id) => {
+  const handleDeleteUser = async(id) => {
     const res = await deleteUserAPT(id);
-    if (res.data) {
+    if(res.data){
       notification.success({
         message: "delete user",
-        description: "Xoa user thanh cong",
-      });
+        description: "Xoa user thanh cong"
+      })
       await loadUser();
-    } else {
+    }else{
       notification.error({
         message: "delete user",
-        description: "Xoa user that bai",
-      });
+        description: "Xoa user that bai"
+      })
     }
   };
   const columns = [
     {
       title: "STT",
-      render: (_, record, index) => {
-        return (
-          <>{index + 1}</>
-        );
-      },
     },
     {
       title: "Id",
@@ -75,7 +70,7 @@ const Usertable = (props) => {
               setDataUpdate(record);
             }}
           />
-
+          
           <Popconfirm
             title="Xoa nguoi dung"
             description="ban co chac nhan muon xoa user nay?"
@@ -130,7 +125,7 @@ const Usertable = (props) => {
         setOpenDrawerDeatilUser={setOpenDrawerDeatilUser}
         dataUserDetail={dataUserDetail}
         setDataUserDetail={setDataUserDetail}
-        loadUser={loadUser}
+        loadUser = {loadUser}
       />
     </>
   );

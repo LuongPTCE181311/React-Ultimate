@@ -34,7 +34,7 @@ const Usertable = (props) => {
       title: "STT",
       render: (_, record, index) => {
         return (
-          <>{index + 1}</>
+          <>{index}</>
         );
       },
     },

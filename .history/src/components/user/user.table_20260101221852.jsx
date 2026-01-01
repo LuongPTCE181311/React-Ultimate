@@ -8,15 +8,7 @@ import DetailUserDrawer from "./detail.user.drawer";
 import { deleteUserAPT } from "../../services/apiservice";
 
 const UserTable = (props) => {
-  const {
-    dataUsers,
-    loadUser,
-    current,
-    pageSize,
-    total,
-    setCurrent,
-    setPageSize,
-  } = props;
+  const { dataUsers, loadUser, current, pageSize, total, setCurrent, setPageSize } = props;
   const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
   const [dataUpdate, setDataUpdate] = useState(null);
   const [openDrawerDeatilUser, setOpenDrawerDeatilUser] = useState(false);
@@ -41,7 +33,7 @@ const UserTable = (props) => {
     {
       title: "STT",
       render: (_, record, index) => {
-        return <>{(index + 1) + (current - 1) * pageSize}</>;
+        return <>{index + 1}</>;
       },
     },
     {
@@ -121,15 +113,9 @@ const UserTable = (props) => {
   // ];
 
   const onChange = (pagination, filters, sorter, extra) => {
-    if (pagination && pagination.current) {
-      if (+pagination.current !== +current) {
-        setCurrent(+pagination.current);
-      }
-    }
-
-    if (pagination && pagination.pageSize) {
-      if (+pagination.pageSize !== +pageSize) {
-        setPageSize(+pagination.pageSize);
+    if(pagination && pagination.current ){
+      if(pagination.current !== current){
+        setCurrent
       }
     }
   };

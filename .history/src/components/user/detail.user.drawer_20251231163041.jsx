@@ -1,0 +1,31 @@
+import { Button, Drawer } from "antd";
+
+const DetailUserDrawer = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { openDrawerDeatilUser, setOpenDrawerDeatilUser, dataUserDetail } = props;
+  const showDrawer = () => {
+    setOpenDrawerDeatilUser(true);
+  };
+  const onClose = () => {
+    setOpenDrawerDeatilUser(false);
+  };
+  return (
+    <>
+      <Button type="primary" onClick={showDrawer}>
+        Open
+      </Button>
+      <Drawer
+        title="Chi tiết User"
+        closable={{ "aria-label": "Close Button" }}
+        onClose={onClose}
+        open={openDrawerDeatilUser}
+      >
+        <p>id: {data}</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
+    </>
+  );
+};
+
+export default DetailUserDrawer;

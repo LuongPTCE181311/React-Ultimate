@@ -3,7 +3,7 @@ const RegisterPage = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values) =>{
-    console.log(values);
+    console.log();
     
   }
   return (
@@ -50,10 +50,10 @@ const RegisterPage = () => {
         >
           <Input />
         </Form.Item>
-        
-        <div>
-          <Button onClick={() => form.submit()} type="primary">Register</Button>
-        </div>
+        <button type="submit">Register</button>
+        {/* <div>
+          <Button type="primary">Register</Button>
+        </div> */}
       </div>
     </Form>
   );

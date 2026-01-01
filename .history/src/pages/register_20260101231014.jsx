@@ -50,9 +50,9 @@ const RegisterPage = () => {
         >
           <Input />
         </Form.Item>
-        
+        <button type="submit">Register</button>
         <div>
-          <Button onClick={() => form.submit()} type="primary">Register</Button>
+          <Button type="primary">Register</Button>
         </div>
       </div>
     </Form>

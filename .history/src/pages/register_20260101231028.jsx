@@ -52,7 +52,7 @@ const RegisterPage = () => {
         </Form.Item>
         
         <div>
-          <Button onClick={() => form.submit()} type="primary">Register</Button>
+          <Button onClick={() => for} type="primary">Register</Button>
         </div>
       </div>
     </Form>

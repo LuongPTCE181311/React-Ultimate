@@ -1,17 +1,11 @@
 import { Button, Input, Form } from "antd";
 const RegisterPage = () => {
-  const [form] = Form.useForm();
-
-  const onFinish = (values) =>{
-    console.log(values);
-    
-  }
+  const {form}
   return (
     <Form
-      form={form}
       name="basic"
       layout="vertical"
-      onFinish={onFinish}
+      // onFinish={onFinish}
       // onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
@@ -50,9 +44,8 @@ const RegisterPage = () => {
         >
           <Input />
         </Form.Item>
-        
         <div>
-          <Button onClick={() => form.submit()} type="primary">Register</Button>
+          <Button type="primary">Register</Button>
         </div>
       </div>
     </Form>

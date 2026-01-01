@@ -1,10 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Button, Drawer } from "antd";
-import { useState } from "react";
 
 const DetailUserDrawer = (props) => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [preview, setPreview] = useState(null);
   const {
     openDrawerDeatilUser,
     setOpenDrawerDeatilUser,
@@ -20,18 +17,18 @@ const DetailUserDrawer = (props) => {
   };
   const handleOnChangeFile = (e) => {
     if (!e.target.files || e.target.files.length === 0) {
-      setSelectedFile(null);
-      setPreview(null);
+      setSelectedFile(undefined);
       return;
     }
-    const file = e.target.files[0];
-    if (file) {
-      setSelectedFile(file);
-      setPreview(URL.createObjectURL(file));
-    }
+
+    // I've kept this example simple by using the first image instead of multiple
+    setSelectedFile(e.target.files[0]);
   };
   return (
     <>
+      <Button type="primary" onClick={showDrawer}>
+        Open
+      </Button>
       <Drawer
         width={"40vw"}
         title="Chi tiết User"
@@ -70,7 +67,7 @@ const DetailUserDrawer = (props) => {
               <label
                 htmlFor="btnUpload"
                 style={{
-                  display: "block",
+                  display: "flex",
                   width: "fit-content",
                   marginTop: "15px",
                   padding: "5px 10px",
@@ -84,29 +81,9 @@ const DetailUserDrawer = (props) => {
                 type="file"
                 hidden
                 id="btnUpload"
-                onChange={(e) => handleOnChangeFile(e)}
+                onChange={(e) => handleOnChangeFile(e.target.files[0])}
               />
             </div>
-            {preview && (
-              <div
-                style={{
-                  marginTop: "10px",
-                  height: "100px",
-                  width: "150px",
-                  border: "1px solid #ccc",
-                }}
-              >
-                <img
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
-                  src={preview}
-                  alt=""
-                />
-              </div>
-            )}
           </>
         ) : (
           <>Khong co du lieu</>

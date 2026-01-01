@@ -32,6 +32,7 @@ const DetailUserDrawer = (props) => {
   };
   return (
     <>
+      
       <Drawer
         width={"40vw"}
         title="Chi tiết User"

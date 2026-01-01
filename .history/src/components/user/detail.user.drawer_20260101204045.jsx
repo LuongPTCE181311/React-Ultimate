@@ -32,6 +32,9 @@ const DetailUserDrawer = (props) => {
   };
   return (
     <>
+      <Button type="primary" onClick={showDrawer}>
+        Open
+      </Button>
       <Drawer
         width={"40vw"}
         title="Chi tiết User"

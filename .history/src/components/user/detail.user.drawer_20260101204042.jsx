@@ -32,6 +32,9 @@ const DetailUserDrawer = (props) => {
   };
   return (
     <>
+      <Button type="primary" onClick={showDrawer}>
+        Open
+      </Button>
       <Drawer
         width={"40vw"}
         title="Chi tiết User"
@@ -87,26 +90,20 @@ const DetailUserDrawer = (props) => {
                 onChange={(e) => handleOnChangeFile(e)}
               />
             </div>
-            {preview && (
-              <div
-                style={{
-                  marginTop: "10px",
-                  height: "100px",
-                  width: "150px",
-                  border: "1px solid #ccc",
-                }}
-              >
-                <img
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
-                  src={preview}
-                  alt=""
-                />
-              </div>
-            )}
+            {preview && <div
+              style={{
+                marginTop: "10px",
+                height: "100px",
+                width: "150px",
+                border: "1px solid #ccc",
+              }}
+            >
+              <img
+                style={{ height: "100%", width: "100%", objectFit: "contain" }}
+                src={preview}
+                alt=""
+              />
+            </div>
           </>
         ) : (
           <>Khong co du lieu</>

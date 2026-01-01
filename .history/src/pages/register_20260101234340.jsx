@@ -86,8 +86,7 @@ const RegisterPage = () => {
               form.setFieldsValue({
                 fullName: "hoidanit",
                 email: "hoidanit@gmail.com",
-                password: "siuodyfhsdhqw",
-                phone: 912234455000,
+                password: 1234560,
               });
             }}
           >

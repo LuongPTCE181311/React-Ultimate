@@ -82,17 +82,17 @@ const RegisterPage = () => {
             Register
           </Button>
           <Button
-            onClick={() => {
-              form.setFieldsValue({
-                fullName: "hoidanit",
-                email: "hoidanit@gmail.com",
-                password: "siuodyfhsdhqw",
-                phone: 912234455000,
-              });
-            }}
-          >
-            Test
-          </Button>
+              onClick={() => {
+                form.setFieldsValue({
+                  fullName: "hoidanit",
+                  email: "hoidanit@gmail.com",
+                  password: 123456,
+                  phone: "0912234455",
+                });
+              }}
+            >
+              Test
+            </Button>
         </div>
       </div>
     </Form>

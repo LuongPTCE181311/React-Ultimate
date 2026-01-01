@@ -50,13 +50,11 @@ const handleUploadFile = (file, folder) => {
   return axios.post(URL_BACKEND, bodyFormdData, config);
 };
 
-const updateUserAvatarAPI = (avatar, _id, fullName, phone) => {
+const updateUserAvatarAPI = (_id, avatar) => {
   const URL_BACKEND = "/api/v1/user";
   const data = {
     _id: _id,
     avatar: avatar,
-    fullName: fullName,
-    phone: phone
   };
   return axios.put(URL_BACKEND, data);
 };

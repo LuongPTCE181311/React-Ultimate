@@ -14,7 +14,6 @@ const DetailUserDrawer = (props) => {
     setOpenDrawerDeatilUser,
     dataUserDetail,
     setDataUserDetail,
-    loadUser,
   } = props;
   const showDrawer = () => {
     setOpenDrawerDeatilUser(true);
@@ -49,8 +48,7 @@ const DetailUserDrawer = (props) => {
       if (resUpdateAvatar.data) {
         setOpenDrawerDeatilUser(false);
         setSelectedFile(null);
-        setPreview(null);
-        await loadUser();
+      setPreview(null);
         notification.success({
           message: "Update user avatar",
           description: "Cap nhat avatar thanh cong",

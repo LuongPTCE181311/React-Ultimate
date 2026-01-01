@@ -55,8 +55,7 @@ const updateUserAvatarAPI = (avatar, _id, fullName, phone) => {
   const data = {
     _id: _id,
     avatar: avatar,
-    fullName: fullName,
-    phone: phone
+    
   };
   return axios.put(URL_BACKEND, data);
 };

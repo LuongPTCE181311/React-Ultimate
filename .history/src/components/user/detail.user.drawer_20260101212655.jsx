@@ -50,7 +50,7 @@ const DetailUserDrawer = (props) => {
         setOpenDrawerDeatilUser(false);
         setSelectedFile(null);
         setPreview(null);
-        await loadUser();
+        loadUser();
         notification.success({
           message: "Update user avatar",
           description: "Cap nhat avatar thanh cong",

@@ -48,17 +48,8 @@ const handleUploadFile = (file, folder) => {
   const bodyFormdData = new FormData();
   bodyFormdData.append("fileImg", file);
   return axios.post(URL_BACKEND, bodyFormdData, config);
-};
 
-const updateUserAvatarAPI = (avatar, _id, fullName, phone) => {
-  const URL_BACKEND = "/api/v1/user";
-  const data = {
-    _id: _id,
-    avatar: avatar,
-    fullName: fullName,
-    phone: phone
-  };
-  return axios.put(URL_BACKEND, data);
+  
 };
 
 export {

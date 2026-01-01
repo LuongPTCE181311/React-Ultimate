@@ -1,10 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Button, Drawer, notification } from "antd";
 import { useState } from "react";
-import {
-  handleUploadFile,
-  updateUserAvatarAPI,
-} from "../../services/apiservice";
+import { handleUploadFile, updateUserAvatarAPI } from "../../services/apiservice";
 
 const DetailUserDrawer = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -14,7 +11,6 @@ const DetailUserDrawer = (props) => {
     setOpenDrawerDeatilUser,
     dataUserDetail,
     setDataUserDetail,
-    loadUser,
   } = props;
   const showDrawer = () => {
     setOpenDrawerDeatilUser(true);
@@ -40,26 +36,18 @@ const DetailUserDrawer = (props) => {
     const resUpload = await handleUploadFile(selectedFile, "avatar");
     if (resUpload.data) {
       const newAvatar = resUpload.data.fileUploaded;
-      const resUpdateAvatar = await updateUserAvatarAPI(
-        newAvatar,
-        dataUserDetail._id,
-        dataUserDetail.fullName,
-        dataUserDetail.phone
-      );
-      if (resUpdateAvatar.data) {
-        setOpenDrawerDeatilUser(false);
-        setSelectedFile(null);
-        setPreview(null);
-        await loadUser();
+      const resUpdateAvatar = await updateUserAvatarAPI(newAvatar, dataUserDetail._id, dataUserDetail.fullName, dataUserDetail.phone);
+      if(resUpdateAvatar.data){
         notification.success({
+          setOpenDrawerDeatilUser
           message: "Update user avatar",
           description: "Cap nhat avatar thanh cong",
-        });
-      } else {
+        })
+      }else{
         notification.error({
-          message: "Error update file",
-          description: JSON.stringify(resUpdateAvatar.message),
-        });
+        message: "Error update file",
+        description: JSON.stringify(resUpdateAvatar.message),
+      });
       }
     } else {
       notification.error({

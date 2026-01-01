@@ -122,7 +122,7 @@ const Usertable = (props) => {
         setOpenDrawerDeatilUser={setOpenDrawerDeatilUser}
         dataUserDetail={dataUserDetail}
         setDataUserDetail={setDataUserDetail}
-        loadUser = {loadUser}
+        loadUser ={loadUser}
       />
     </>
   );

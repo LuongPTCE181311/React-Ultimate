@@ -1,5 +1,5 @@
 import { Button, Form, Input, Typography, Space, Col } from "antd";
-import { Divider } from "antd";
+import { Divider } from 'antd';
 import { Link } from "react-router-dom";
 
 const { Title, Text } = Typography;

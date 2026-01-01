@@ -41,18 +41,6 @@ const DetailUserDrawer = (props) => {
             <div>
               <img height={250} width={300} src={`${import.meta.env.VITE_BACKEND_URL}/images/avatar/${dataUserDetail.avatar}`} alt="" />
             </div>
-            <div>
-              <label htmlFor="btnUpload" style={{
-                display: "flex",
-                width: "fit-content",
-                marginTop: "15px",
-                padding: "5px 10px",
-                background: "orange",
-                borderRadius: "5px"
-              }}
-              >Upload avatar</label>
-              <input type="file" hidden id="btnUpload"/>
-            </div>
           </>
         ) : (
           <>Khong co du lieu</>

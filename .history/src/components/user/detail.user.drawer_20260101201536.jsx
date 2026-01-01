@@ -48,7 +48,7 @@ const DetailUserDrawer = (props) => {
                 marginTop: "15px",
                 padding: "5px 10px",
                 background: "orange",
-                borderRadius: "5px"
+                bor
               }}
               >Upload avatar</label>
               <input type="file" hidden id="btnUpload"/>

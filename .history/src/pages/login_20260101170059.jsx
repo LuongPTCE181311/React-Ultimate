@@ -1,5 +1,4 @@
-import { Button, Form, Input, Typography, Space, Col } from "antd";
-import { Divider } from "antd";
+import { Button, Form, Input, Card, Typography, Space, Col } from "antd";
 import { Link } from "react-router-dom";
 
 const { Title, Text } = Typography;
@@ -28,9 +27,6 @@ const LoginPage = () => {
             borderRadius: "5px",
           }}
         >
-          <Title level={3} style={{ textAlign: "center" }}>
-            Đăng Nhập
-          </Title>
           <Form layout="vertical" onFinish={onFinish}>
             <Form.Item
               label="Email"
@@ -66,7 +62,7 @@ const LoginPage = () => {
               </Space>
             </Form.Item>
           </Form>
-          <Divider />
+
           <div style={{ textAlign: "center", marginTop: 16 }}>
             <Text>Chưa có tài khoản? </Text>
             <Link to={"/register"}>Đăng ký tại đây</Link>

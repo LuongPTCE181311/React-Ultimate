@@ -45,10 +45,7 @@ const DetailUserDrawer = (props) => {
               <label htmlFor="btnUpload" style={{
                 display: "flex",
                 width: "fit-content",
-                marginTop: "15px",
-                padding: "5px 10px",
-                background: "orange",
-                borderRadius: "5px"
+                
               }}
               >Upload avatar</label>
               <input type="file" hidden id="btnUpload"/>

@@ -13,17 +13,16 @@ const RegisterPage = () => {
       values.phone
     );
 
-    if (res.data) {
+    if(res.data){
       notification.success({
         message: "Register user",
-        description: "Dang ky user thanh cong",
-      });
-      navigate("/login");
-    } else {
+        description: "Dang ky user thanh cong"
+      })
+    }else {
       notification.error({
         message: "Register user",
-        description: JSON.stringify(res.message),
-      });
+        description: JSON.stringify(res.message)
+      })
     }
   };
   return (

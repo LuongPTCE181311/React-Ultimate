@@ -61,7 +61,7 @@ const updateUserAvatarAPI = (avatar, _id, fullName, phone) => {
 };
 
 const registerUserAPI = (fullName, email, password, phone) => {
-  const URL_BACKEND = "/api/v1/user/register";
+  const URL_BACKEND = "/api/v1/user";
   const data = {
     fullName: fullName,
     email: email,
@@ -79,5 +79,4 @@ export {
   fetchAllBookAPI,
   handleUploadFile,
   updateUserAvatarAPI,
-  registerUserAPI,
 };

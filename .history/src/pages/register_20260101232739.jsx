@@ -1,30 +1,12 @@
-import { Button, Input, Form, notification } from "antd";
+import { Button, Input, Form } from "antd";
 import { registerUserAPI } from "../services/apiservice";
-import { useNavigate } from "react-router-dom";
-
 const RegisterPage = () => {
   const [form] = Form.useForm();
-  const navigate = useNavigate();
+
   const onFinish = async (values) => {
     const res = await registerUserAPI(
-      values.fullName,
-      values.email,
-      values.password,
-      values.phone
+      values.fu
     );
-
-    if (res.data) {
-      notification.success({
-        message: "Register user",
-        description: "Dang ky user thanh cong",
-      });
-      navigate("/login");
-    } else {
-      notification.error({
-        message: "Register user",
-        description: JSON.stringify(res.message),
-      });
-    }
   };
   return (
     <Form

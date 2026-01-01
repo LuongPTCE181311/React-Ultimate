@@ -79,5 +79,5 @@ export {
   fetchAllBookAPI,
   handleUploadFile,
   updateUserAvatarAPI,
-  registerUserAPI,
+  res
 };

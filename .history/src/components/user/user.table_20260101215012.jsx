@@ -7,8 +7,8 @@ import { useState } from "react";
 import DetailUserDrawer from "./detail.user.drawer";
 import { deleteUserAPT } from "../../services/apiservice";
 
-const UserTable = (props) => {
-  const { dataUsers, loadUser, current, pageSize, total, setCurrent, setPageSize } = props;
+const Usertable = (props) => {
+  const { dataUsers, loadUser } = props;
   const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
   const [dataUpdate, setDataUpdate] = useState(null);
   const [openDrawerDeatilUser, setOpenDrawerDeatilUser] = useState(false);
@@ -33,7 +33,9 @@ const UserTable = (props) => {
     {
       title: "STT",
       render: (_, record, index) => {
-        return <>{index + 1}</>;
+        return (
+          <>{index + 1}</>
+        );
       },
     },
     {
@@ -112,31 +114,12 @@ const UserTable = (props) => {
   //   },
   // ];
 
-  const onChange = (pagination, filters, sorter, extra) => {
-
-  };
+  console.log("render  111");
   return (
     <>
-      <Table
-        columns={columns}
-        dataSource={dataUsers}
-        rowKey={"_id"}
-        pagination={{
-          current: current,
-          pageSize: pageSize,
-          showSizeChanger: true,
-          total: total,
-          showTotal: (total, range) => {
-            return (
-              <div>
-                {" "}
-                {range[0]}-{range[1]} trên {total} rows
-              </div>
-            );
-          },
-        }}
-        onChange={onChange}
-      />
+      <Table columns={columns}
+       dataSource={dataUsers}
+        rowKey={"_id"} />
       <UpdateUserModal
         isModalUpdateOpen={isModalUpdateOpen}
         setIsModalUpdateOpen={setIsModalUpdateOpen}
@@ -155,4 +138,4 @@ const UserTable = (props) => {
   );
 };
 
-export default UserTable;
+export default Usertable;

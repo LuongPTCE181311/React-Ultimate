@@ -7,8 +7,8 @@ import { useState } from "react";
 import DetailUserDrawer from "./detail.user.drawer";
 import { deleteUserAPT } from "../../services/apiservice";
 
-const UserTable = (props) => {
-  const { dataUsers, loadUser, current, pageSize, total, setCurrent, setPageSize } = props;
+const Usertable = (props) => {
+  const { dataUsers, loadUser } = props;
   const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
   const [dataUpdate, setDataUpdate] = useState(null);
   const [openDrawerDeatilUser, setOpenDrawerDeatilUser] = useState(false);
@@ -112,9 +112,7 @@ const UserTable = (props) => {
   //   },
   // ];
 
-  const onChange = (pagination, filters, sorter, extra) => {
-
-  };
+  console.log("render  111");
   return (
     <>
       <Table
@@ -122,10 +120,10 @@ const UserTable = (props) => {
         dataSource={dataUsers}
         rowKey={"_id"}
         pagination={{
-          current: current,
-          pageSize: pageSize,
+          current: 1,
+          pageSize: 10,
           showSizeChanger: true,
-          total: total,
+          total: 99,
           showTotal: (total, range) => {
             return (
               <div>
@@ -135,7 +133,6 @@ const UserTable = (props) => {
             );
           },
         }}
-        onChange={onChange}
       />
       <UpdateUserModal
         isModalUpdateOpen={isModalUpdateOpen}
@@ -155,4 +152,4 @@ const UserTable = (props) => {
   );
 };
 
-export default UserTable;
+export default Usertable;

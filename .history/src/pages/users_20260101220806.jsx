@@ -26,14 +26,12 @@ const UsersPage = () => {
   return (
     <div style={{ padding: "20px" }}>
       <UserForm loadUser={loadUser} />
-      <UserTable
+      <Usertable
         dataUsers={dataUsers}
         loadUser={loadUser}
         current={current}
         pageSize={pageSize}
         total={total}
-        setCurrent={setCurrent}
-        setPageSize={setPageSize}
       />
     </div>
   );

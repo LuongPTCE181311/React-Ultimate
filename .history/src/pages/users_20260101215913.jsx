@@ -1,5 +1,5 @@
 import UserForm from "../components/user/user.form";
-import UserTable from "../components/user/user.table";
+import Usertable from "../components/user/user.table";
 import { useEffect, useState } from "react";
 import { fetchAllUserAPI } from "../services/apiservice";
 
@@ -15,26 +15,18 @@ const UsersPage = () => {
   }, []);
 
   const loadUser = async () => {
-    const res = await fetchAllUserAPI(current, pageSize);
-    if (res.data) {
+    const res = await fetchAllUserAPI();
+    if(res.data){
       setDataUsers(res.data.result);
       setCurrent(res.data.meta.current);
-      setPageSize(res.data.meta.pageSize);
-      setTotal(res.data.meta.total);
+      setPageSize(res.data.meta.page)
     }
+    
   };
   return (
     <div style={{ padding: "20px" }}>
       <UserForm loadUser={loadUser} />
-      <UserTable
-        dataUsers={dataUsers}
-        loadUser={loadUser}
-        current={current}
-        pageSize={pageSize}
-        total={total}
-        setCurrent={setCurrent}
-        setPageSize={setPageSize}
-      />
+      <Usertable dataUsers={dataUsers} loadUser={loadUser} />
     </div>
   );
 };

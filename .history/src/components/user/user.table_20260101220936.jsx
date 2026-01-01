@@ -8,11 +8,12 @@ import DetailUserDrawer from "./detail.user.drawer";
 import { deleteUserAPT } from "../../services/apiservice";
 
 const UserTable = (props) => {
-  const { dataUsers, loadUser, current, pageSize, total, setCurrent, setPageSize } = props;
+  const { dataUsers, loadUser, current, pageSize, total} = props;
   const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
   const [dataUpdate, setDataUpdate] = useState(null);
   const [openDrawerDeatilUser, setOpenDrawerDeatilUser] = useState(false);
   const [dataUserDetail, setDataUserDetail] = useState(null);
+  
 
   const handleDeleteUser = async (id) => {
     const res = await deleteUserAPT(id);
@@ -112,9 +113,7 @@ const UserTable = (props) => {
   //   },
   // ];
 
-  const onChange = (pagination, filters, sorter, extra) => {
-
-  };
+  console.log("render  111");
   return (
     <>
       <Table
@@ -135,7 +134,6 @@ const UserTable = (props) => {
             );
           },
         }}
-        onChange={onChange}
       />
       <UpdateUserModal
         isModalUpdateOpen={isModalUpdateOpen}

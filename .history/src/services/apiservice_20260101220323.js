@@ -1,3 +1,4 @@
+import { Header } from "antd/es/layout/layout";
 import axios from "./axios.customize";
 
 const createUserAPI = (fullName, email, password, phone) => {
@@ -22,7 +23,7 @@ const updateUserAPI = (_id, fullName, phone) => {
 };
 
 const fetchAllUserAPI = (current, pageSize) => {
-  const URL_BACKEND = `/api/v1/user?current=${current}&pageSize=${pageSize}`;
+  const URL_BACKEND = `/api/v1/user?current=${&pageSize=1`;
   return axios.get(URL_BACKEND);
 };
 

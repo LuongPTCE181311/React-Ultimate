@@ -8,7 +8,7 @@ import DetailUserDrawer from "./detail.user.drawer";
 import { deleteUserAPT } from "../../services/apiservice";
 
 const UserTable = (props) => {
-  const { dataUsers, loadUser, current, pageSize, total, setCurrent, setPageSize } = props;
+  const { dataUsers, loadUser, current, pageSize, total, setCurrent } = props;
   const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
   const [dataUpdate, setDataUpdate] = useState(null);
   const [openDrawerDeatilUser, setOpenDrawerDeatilUser] = useState(false);

@@ -76,6 +76,7 @@ const handleLogin = (email, password) => {
   const data = {
     email: email,
     password: password,
+    phone: phone,
   };
   return axios.post(URL_BACKEND, data);
 };
@@ -89,5 +90,4 @@ export {
   handleUploadFile,
   updateUserAvatarAPI,
   registerUserAPI,
-  handleLogin,
 };

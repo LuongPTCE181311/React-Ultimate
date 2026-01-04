@@ -34,10 +34,9 @@ const RegisterPage = () => {
       onFinish={onFinish}
       // onFinishFailed={onFinishFailed}
       autoComplete="off"
-      style={{ margin: "10px" }}
     >
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
+      <Row>
+        <Col xs={24} md={6}>
           <Form.Item
             label="Full Name"
             name="fullName"
@@ -47,8 +46,8 @@ const RegisterPage = () => {
           </Form.Item>
         </Col>
       </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
+      <Row>
+        <Col xs={24} md={6}>
           <Form.Item
             label="Email"
             name="email"
@@ -58,55 +57,50 @@ const RegisterPage = () => {
           </Form.Item>
         </Col>
       </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
-          >
-            <Input.Password />
-          </Form.Item>
-        </Col>
+      <Row>
+      <Col xs={24} md={6}>
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[{ required: true, message: "Please input your password!" }]}
+        >
+          <Input.Password />
+        </Form.Item>
+      </Col>
       </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
-          <Form.Item
-            label="Phone Number"
-            name="phone"
-            rules={[
-              {
-                // required: true,
-                message: "Wrong format",
-                pattern: new RegExp(/\d+/g),
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-        </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
-          <div>
-            <Button onClick={() => form.submit()} type="primary">
-              Register
-            </Button>
-            <Button
-              onClick={() => {
-                form.setFieldsValue({
-                  fullName: "hoidanit",
-                  email: "hoidanit@gmail.com",
-                  password: "siuodyfhsdhqw",
-                  phone: 912234455000,
-                });
-              }}
-            >
-              Test
-            </Button>
-          </div>
-        </Col>
-      </Row>
+      <Row></Row>
+      <Col xs={24} md={6}>
+        <Form.Item
+          label="Phone Number"
+          name="phone"
+          rules={[
+            {
+              // required: true,
+              message: "Wrong format",
+              pattern: new RegExp(/\d+/g),
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+      </Col>
+      <div>
+        <Button onClick={() => form.submit()} type="primary">
+          Register
+        </Button>
+        <Button
+          onClick={() => {
+            form.setFieldsValue({
+              fullName: "hoidanit",
+              email: "hoidanit@gmail.com",
+              password: "siuodyfhsdhqw",
+              phone: 912234455000,
+            });
+          }}
+        >
+          Test
+        </Button>
+      </div>
     </Form>
   );
 };

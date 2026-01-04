@@ -70,7 +70,7 @@ const RegisterPage = () => {
         </Col>
       </Row>
       <Row justify={"center"}>
-        <Col xs={24} md={8}>
+        <Col xs={24} md={6}>
           <Form.Item
             label="Phone Number"
             name="phone"
@@ -87,7 +87,7 @@ const RegisterPage = () => {
         </Col>
       </Row>
       <Row justify={"center"}>
-        <Col xs={24} md={8}>
+        <Col xs={24} md={6}>
           <div>
             <Button onClick={() => form.submit()} type="primary">
               Register

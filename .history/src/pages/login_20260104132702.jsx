@@ -1,4 +1,4 @@
-import { Button, Form, Input, Typography, Space, Col, message } from "antd";
+import { Button, Form, Input, Typography, Space, Col } from "antd";
 import { Divider } from "antd";
 
 import { Link } from "react-router-dom";
@@ -8,16 +8,9 @@ const { Title, Text } = Typography;
 
 const LoginPage = () => {
   const [form] = Form.useForm();
-  const onFinish = async (values) => {
-    const res = await handleLogin(values.email, values.password);
-    if (res.data) {
-      message.success("dang nhap thanh cong");
-    } else {
-      message.error({
-        message: "Error Login",
-        description: JSON.stringify(res.message),
-      });
-    }
+  const onFinish = (values) => {
+    const res = handleLogin(values.email, values.password);
+    
   };
 
   return (

@@ -1,23 +1,14 @@
-import { Button, Form, Input, Typography, Space, Col, message } from "antd";
+import { Button, Form, Input, Typography, Space, Col } from "antd";
 import { Divider } from "antd";
-
+import { useForm } from "antd/es/form/Form";
 import { Link } from "react-router-dom";
-import { handleLogin } from "../services/apiservice";
 
 const { Title, Text } = Typography;
 
 const LoginPage = () => {
   const [form] = Form.useForm();
-  const onFinish = async (values) => {
-    const res = await handleLogin(values.email, values.password);
-    if (res.data) {
-      message.success("dang nhap thanh cong");
-    } else {
-      message.error({
-        message: "Error Login",
-        description: JSON.stringify(res.message),
-      });
-    }
+  const onFinish = (values) => {
+    console.log("Login data:", values);
   };
 
   return (
@@ -69,7 +60,7 @@ const LoginPage = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <Button type="primary" onClick={() => form.submit()}>
+                <Button type="primary" htmlType="submit">
                   Login
                 </Button>
 

@@ -89,5 +89,5 @@ export {
   handleUploadFile,
   updateUserAvatarAPI,
   registerUserAPI,
-  handleLogin,
+  handleLogin
 };

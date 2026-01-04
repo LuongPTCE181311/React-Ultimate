@@ -34,10 +34,9 @@ const RegisterPage = () => {
       onFinish={onFinish}
       // onFinishFailed={onFinishFailed}
       autoComplete="off"
-      style={{ margin: "10px" }}
     >
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
+      <Row>
+        <Col span={8}>
           <Form.Item
             label="Full Name"
             name="fullName"
@@ -46,9 +45,7 @@ const RegisterPage = () => {
             <Input />
           </Form.Item>
         </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
+        <Col span={24}>
           <Form.Item
             label="Email"
             name="email"
@@ -57,9 +54,7 @@ const RegisterPage = () => {
             <Input />
           </Form.Item>
         </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
+        <Col span={24}>
           <Form.Item
             label="Password"
             name="password"
@@ -68,9 +63,7 @@ const RegisterPage = () => {
             <Input.Password />
           </Form.Item>
         </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
+        <Col span={24}>
           <Form.Item
             label="Phone Number"
             name="phone"
@@ -85,27 +78,23 @@ const RegisterPage = () => {
             <Input />
           </Form.Item>
         </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
-          <div>
-            <Button onClick={() => form.submit()} type="primary">
-              Register
-            </Button>
-            <Button
-              onClick={() => {
-                form.setFieldsValue({
-                  fullName: "hoidanit",
-                  email: "hoidanit@gmail.com",
-                  password: "siuodyfhsdhqw",
-                  phone: 912234455000,
-                });
-              }}
-            >
-              Test
-            </Button>
-          </div>
-        </Col>
+        <div>
+          <Button onClick={() => form.submit()} type="primary">
+            Register
+          </Button>
+          <Button
+            onClick={() => {
+              form.setFieldsValue({
+                fullName: "hoidanit",
+                email: "hoidanit@gmail.com",
+                password: "siuodyfhsdhqw",
+                phone: 912234455000,
+              });
+            }}
+          >
+            Test
+          </Button>
+        </div>
       </Row>
     </Form>
   );

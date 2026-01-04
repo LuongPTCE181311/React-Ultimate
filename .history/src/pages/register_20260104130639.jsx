@@ -1,4 +1,4 @@
-import { Button, Input, Form, notification, Row, Col } from "antd";
+import { Button, Input, Form, notification, Row } from "antd";
 import { registerUserAPI } from "../services/apiservice";
 import { useNavigate } from "react-router-dom";
 
@@ -34,10 +34,16 @@ const RegisterPage = () => {
       onFinish={onFinish}
       // onFinishFailed={onFinishFailed}
       autoComplete="off"
-      style={{ margin: "10px" }}
     >
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
+      <Row>
+        <div
+          style={{
+            margin: "50px",
+            // display: "flex",
+            // flexDirection: "column",
+          }}
+        >
+          <Col
           <Form.Item
             label="Full Name"
             name="fullName"
@@ -45,10 +51,6 @@ const RegisterPage = () => {
           >
             <Input />
           </Form.Item>
-        </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
           <Form.Item
             label="Email"
             name="email"
@@ -56,10 +58,6 @@ const RegisterPage = () => {
           >
             <Input />
           </Form.Item>
-        </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
           <Form.Item
             label="Password"
             name="password"
@@ -67,10 +65,6 @@ const RegisterPage = () => {
           >
             <Input.Password />
           </Form.Item>
-        </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
           <Form.Item
             label="Phone Number"
             name="phone"
@@ -84,10 +78,7 @@ const RegisterPage = () => {
           >
             <Input />
           </Form.Item>
-        </Col>
-      </Row>
-      <Row justify={"center"}>
-        <Col xs={24} md={8}>
+
           <div>
             <Button onClick={() => form.submit()} type="primary">
               Register
@@ -105,7 +96,7 @@ const RegisterPage = () => {
               Test
             </Button>
           </div>
-        </Col>
+        </div>
       </Row>
     </Form>
   );

@@ -10,14 +10,15 @@ const LoginPage = () => {
   const [form] = Form.useForm();
   const onFinish = async (values) => {
     const res = await handleLogin(values.email, values.password);
-    if (res.data) {
+    if(res.data){
       message.success("dang nhap thanh cong");
-    } else {
+    }else{
       message.error({
         message: "Error Login",
-        description: JSON.stringify(res.message),
-      });
+        desc
+      })
     }
+
   };
 
   return (

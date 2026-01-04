@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, message } from "antd";
 import {
   AliwangwangOutlined,
@@ -13,9 +13,8 @@ import { logoutAPI } from "../../services/apiservice";
 
 const Header = () => {
   const [current, setCurrent] = useState("");
-  const { user, setUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   console.log("check user >>>>>", user);
-  const navigate = useNavigate();
 
   const onClick = (e) => {
     console.log("click ", e);
@@ -24,18 +23,8 @@ const Header = () => {
 
   const handleLogout = async () => {
     const res = await logoutAPI();
-    if (res.data) {
-      localStorage.removeItem("access_token");
-      setUser({
-        email: "",
-        phone: "",
-        fullName: "",
-        role: "",
-        avatar: "",
-        id: "",
-      });
-      message.success("Logout thanh cong");
-      navigate("/");
+    if(res.data){
+      message.success("Log")
     }
   };
   const items = [

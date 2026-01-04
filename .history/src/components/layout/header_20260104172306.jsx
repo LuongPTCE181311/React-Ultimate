@@ -15,7 +15,7 @@ const Header = () => {
   const [current, setCurrent] = useState("");
   const { user, setUser } = useContext(AuthContext);
   console.log("check user >>>>>", user);
-  const navigate = useNavigate();
+  const navigate = useNavigate
 
   const onClick = (e) => {
     console.log("click ", e);
@@ -35,7 +35,7 @@ const Header = () => {
         id: "",
       });
       message.success("Logout thanh cong");
-      navigate("/");
+      
     }
   };
   const items = [

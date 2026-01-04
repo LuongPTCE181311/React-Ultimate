@@ -35,7 +35,7 @@ const Header = () => {
         id: "",
       });
       message.success("Logout thanh cong");
-      navigate("/");
+      
     }
   };
   const items = [

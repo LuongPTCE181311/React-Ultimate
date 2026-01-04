@@ -102,5 +102,4 @@ export {
   registerUserAPI,
   handleLogin,
   getAccountAPI,
-  logoutAPI,
 };

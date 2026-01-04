@@ -4,7 +4,7 @@ import DetailBook from "./book.detail";
 import { useState } from "react";
 const BookTable = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { current, pageSize, dataBooks, total, setCurrent, setPageSize, loadBook } =
+  const { current, pageSize, dataBooks, total, setCurrent, setPageSize } =
     props;
   const [openDrawerDetailBook, setOpenDrawerDetailBook] = useState(false);
   const [dataBookDetail, setDataBookDetail] = useState(null);
@@ -131,7 +131,6 @@ const BookTable = (props) => {
         openDrawerDetailBook={openDrawerDetailBook}
         setDataBookDetail={setDataBookDetail}
         dataBookDetail={dataBookDetail}
-        loadBook={loadBook}
       />
     </>
   );

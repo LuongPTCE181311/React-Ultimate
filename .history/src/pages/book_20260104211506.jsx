@@ -31,7 +31,7 @@ const BookPage = () => {
         total={total}
         setCurrent={setCurrent}
         setPageSize={setPageSize}
-        loadBook={loadBook}
+        loadBook
       />
     </div>
   );

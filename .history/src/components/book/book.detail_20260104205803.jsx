@@ -1,77 +1,9 @@
-/* eslint-disable react/prop-types */
-import { Button, Drawer, notification } from "antd";
 import { useState } from "react";
-import {
-  handleUploadFile,
-  updateUserAvatarAPI,
-} from "../../services/apiservice";
 
-const DetailUserDrawer = (props) => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [preview, setPreview] = useState(null);
-  const {
-    openDrawerDeatilUser,
-    setOpenDrawerDeatilUser,
-    dataUserDetail,
-    setDataUserDetail,
-    loadUser,
-  } = props;
-  // eslint-disable-next-line no-unused-vars
-  const showDrawer = () => {
-    setOpenDrawerDeatilUser(true);
-  };
-  const onClose = () => {
-    setOpenDrawerDeatilUser(false);
-    setDataUserDetail(null);
-  };
-  const handleOnChangeFile = (e) => {
-    if (!e.target.files || e.target.files.length === 0) {
-      setSelectedFile(null);
-      setPreview(null);
-      return;
-    }
-    const file = e.target.files[0];
-    if (file) {
-      setSelectedFile(file);
-      setPreview(URL.createObjectURL(file));
-    }
-  };
-
-  const handleUpdateUserAvatar = async () => {
-    const resUpload = await handleUploadFile(selectedFile, "avatar");
-    if (resUpload.data) {
-      const newAvatar = resUpload.data.fileUploaded;
-      const resUpdateAvatar = await updateUserAvatarAPI(
-        newAvatar,
-        dataUserDetail._id,
-        dataUserDetail.fullName,
-        dataUserDetail.phone
-      );
-      if (resUpdateAvatar.data) {
-        setOpenDrawerDeatilUser(false);
-        setSelectedFile(null);
-        setPreview(null);
-        await loadUser();
-        notification.success({
-          message: "Update user avatar",
-          description: "Cap nhat avatar thanh cong",
-        });
-      } else {
-        notification.error({
-          message: "Error update file",
-          description: JSON.stringify(resUpdateAvatar.message),
-        });
-      }
-    } else {
-      notification.error({
-        message: "Error upload file",
-        description: JSON.stringify(resUpload.message),
-      });
-    }
-  };
-  return (
-    <>
-      <Drawer
+const DetailBook = () => {
+    
+    return (  
+        <Drawer
         width={"40vw"}
         title="Chi tiết User"
         closable={{ "aria-label": "Close Button" }}
@@ -154,8 +86,7 @@ const DetailUserDrawer = (props) => {
           <>Khong co du lieu</>
         )}
       </Drawer>
-    </>
-  );
-};
-
-export default DetailUserDrawer;
+    );
+}
+ 
+export default DetailBook;

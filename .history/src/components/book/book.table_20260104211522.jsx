@@ -131,7 +131,6 @@ const BookTable = (props) => {
         openDrawerDetailBook={openDrawerDetailBook}
         setDataBookDetail={setDataBookDetail}
         dataBookDetail={dataBookDetail}
-        loadBook={loadBook}
       />
     </>
   );

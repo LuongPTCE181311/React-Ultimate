@@ -16,10 +16,6 @@ const DetailUserDrawer = (props) => {
     setDataUserDetail,
     loadUser,
   } = props;
-  // eslint-disable-next-line no-unused-vars
-  const showDrawer = () => {
-    setOpenDrawerDeatilUser(true);
-  };
   const onClose = () => {
     setOpenDrawerDeatilUser(false);
     setDataUserDetail(null);

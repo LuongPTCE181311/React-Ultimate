@@ -1,13 +1,10 @@
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
-import DetailBook from "./book.detail";
-import { useState } from "react";
 const BookTable = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { current, pageSize, dataBooks, total, setCurrent, setPageSize, loadBook } =
+  const { current, pageSize, dataBooks, total, setCurrent, setPageSize } =
     props;
-  const [openDrawerDetailBook, setOpenDrawerDetailBook] = useState(false);
-  const [dataBookDetail, setDataBookDetail] = useState(null);
+  const [openDrawerDeatilBook, setOpenDrawerDeatilBook] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const onChange = (pagination, filters, sorter, extra) => {
     if (pagination && pagination.current) {
@@ -32,19 +29,7 @@ const BookTable = (props) => {
     {
       title: "Id",
       dataIndex: "_id",
-      render: (_, record) => {
-        return (
-          <a
-            href="#"
-            onClick={() => {
-              setOpenDrawerDetailBook(true);
-              setDataBookDetail(record);
-            }}
-          >
-            {record._id}
-          </a>
-        );
-      },
+      render: (text) => <a>{text}</a>,
     },
     {
       title: "Tieu de",
@@ -105,35 +90,26 @@ const BookTable = (props) => {
   //   },
   // ];
   return (
-    <>
-      <Table
-        columns={columns}
-        dataSource={dataBooks}
-        rowKey={"_id"}
-        pagination={{
-          current: current,
-          pageSize: pageSize,
-          showSizeChanger: true,
-          total: total,
-          showTotal: (total, range) => {
-            return (
-              <div>
-                {" "}
-                {range[0]}-{range[1]} trên {total} rows
-              </div>
-            );
-          },
-        }}
-        onChange={onChange}
-      />
-      <DetailBook
-        setOpenDrawerDetailBook={setOpenDrawerDetailBook}
-        openDrawerDetailBook={openDrawerDetailBook}
-        setDataBookDetail={setDataBookDetail}
-        dataBookDetail={dataBookDetail}
-        loadBook={loadBook}
-      />
-    </>
+    <Table
+      columns={columns}
+      dataSource={dataBooks}
+      rowKey={"_id"}
+      pagination={{
+        current: current,
+        pageSize: pageSize,
+        showSizeChanger: true,
+        total: total,
+        showTotal: (total, range) => {
+          return (
+            <div>
+              {" "}
+              {range[0]}-{range[1]} trên {total} rows
+            </div>
+          );
+        },
+      }}
+      onChange={onChange}
+    />
   );
 };
 

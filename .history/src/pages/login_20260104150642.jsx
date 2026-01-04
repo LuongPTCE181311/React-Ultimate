@@ -12,8 +12,7 @@ import { Divider } from "antd";
 
 import { Link, useNavigate } from "react-router-dom";
 import { handleLogin } from "../services/apiservice";
-import { useContext, useState } from "react";
-import { AuthContext } from "../components/context/auth.context";
+import { useState } from "react";
 
 const { Title, Text } = Typography;
 
@@ -21,15 +20,13 @@ const LoginPage = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { setUser } = useContext(AuthContext);
   const onFinish = async (values) => {
     setLoading(true);
     const res = await handleLogin(values.email, values.password);
     if (res.data) {
       message.success("dang nhap thanh cong");
       setLoading(false);
-      localStorage.setItem("access_token", res.data.access_token);
-      setUser(res.data.user);
+      localStorage.setItem("access_token", data)
       navigate("/");
     } else {
       notification.error({

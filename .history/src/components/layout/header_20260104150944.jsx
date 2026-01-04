@@ -12,8 +12,7 @@ import { AuthContext } from "../context/auth.context";
 const Header = () => {
   const [current, setCurrent] = useState("");
   const {user} = useContext(AuthContext);
-  console.log("check user >>>>>", user);
-  
+  log
 
   const onClick = (e) => {
     console.log("click ", e);

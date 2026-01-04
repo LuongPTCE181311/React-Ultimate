@@ -21,7 +21,7 @@ const LoginPage = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { setUser } = useContext(AuthContext);
+  const {setUser} = useContext(AuthContext);
   const onFinish = async (values) => {
     setLoading(true);
     const res = await handleLogin(values.email, values.password);
@@ -29,7 +29,7 @@ const LoginPage = () => {
       message.success("dang nhap thanh cong");
       setLoading(false);
       localStorage.setItem("access_token", res.data.access_token);
-      setUser(res.data.user);
+      setUser(res.data.user)
       navigate("/");
     } else {
       notification.error({

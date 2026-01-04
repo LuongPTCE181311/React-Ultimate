@@ -7,13 +7,10 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { useContext, useState } from "react";
-import { AuthContext } from "../context/auth.context";
 
 const Header = () => {
   const [current, setCurrent] = useState("");
-  const {user} = useContext(AuthContext);
-  console.log("check user >>>>>", user);
-  
+  const {user} = useContext(Au)
 
   const onClick = (e) => {
     console.log("click ", e);

@@ -18,21 +18,12 @@ const App = () => {
       setUser(res.data.user);
       console.log(">>>> check user data: ", res.data);
     }
-    setIsApploading(false);
+    setIsApploading(true);
   };
   return (
     <>
       {isApploading === true ? (
-        <div
-          style={{
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <Spin />
-        </div>
+        <Spin />
       ) : (
         <>
           <Header />

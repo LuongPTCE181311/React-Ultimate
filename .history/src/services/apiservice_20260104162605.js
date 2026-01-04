@@ -81,10 +81,16 @@ const handleLogin = (email, password) => {
   return axios.post(URL_BACKEND, data);
 };
 
-const getAccountAPI = () => {
-  const URL_BACKEND = "/api/v1/auth/account";
-  return axios.get(URL_BACKEND);
+const getAccount = (email, password) => {
+  const URL_BACKEND = "/api/v1/auth/login";
+  const data = {
+    username: email,
+    password: password,
+    delay: 2000,
+  };
+  return axios.post(URL_BACKEND, data);
 };
+
 
 export {
   createUserAPI,
@@ -96,5 +102,4 @@ export {
   updateUserAvatarAPI,
   registerUserAPI,
   handleLogin,
-  getAccountAPI,
 };

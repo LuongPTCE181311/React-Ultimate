@@ -45,7 +45,7 @@ const Header = () => {
           },
         ]
       : []),
-    ...(user.id
+    ...(!user.id
       ? [
           {
             label: `Welcome ${user.fullName}`,

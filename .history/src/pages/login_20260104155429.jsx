@@ -36,7 +36,6 @@ const LoginPage = () => {
         message: "Error Login",
         description: JSON.stringify(res.message),
       });
-      setLoading(false);
     }
   };
 
@@ -79,12 +78,8 @@ const LoginPage = () => {
               name="password"
               rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
             >
-              <Input.Password
-                placeholder="Nhập mật khẩu"
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") form.submit();
-                }}
-              />
+              <Input.Password placeholder="Nhập mật khẩu" onKeyDown={(event) => {console.log()}};
+              }}/>
             </Form.Item>
 
             <Form.Item>

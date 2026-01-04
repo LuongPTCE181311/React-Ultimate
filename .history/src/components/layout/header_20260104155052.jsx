@@ -45,16 +45,16 @@ const Header = () => {
           },
         ]
       : []),
-    ...(user.id
+    ...(!user.id
       ? [
           {
-            label: `Welcome ${user.fullName}`,
-            key: "setting",
-            icon: <AliwangwangOutlined />,
-            children: [{ label: "Dang xuat", key: "logout" }],
+            label: <Link to={"/login"}>Dang nhap</Link>,
+            key: "login",
+            icon: <LoginOutlined />,
           },
         ]
       : []),
+    
   ];
   return (
     <Menu

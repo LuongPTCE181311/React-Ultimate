@@ -5,6 +5,7 @@ import {
   BookOutlined,
   HomeOutlined,
   LoginOutlined,
+ 
   UserOutlined,
 } from "@ant-design/icons";
 import { useContext, useState } from "react";
@@ -35,26 +36,17 @@ const Header = () => {
       key: "books",
       icon: <BookOutlined />,
     },
-
-    ...(!user.id
-      ? [
-          {
-            label: <Link to={"/login"}>Dang nhap</Link>,
-            key: "login",
-            icon: <LoginOutlined />,
-          },
-        ]
-      : []),
-    ...(user.id
-      ? [
-          {
-            label: `Welcome ${user.fullName}`,
-            key: "setting",
-            icon: <AliwangwangOutlined />,
-            children: [{ label: "Dang xuat", key: "logout" }],
-          },
-        ]
-      : []),
+    {
+      label: <Link to={"/login"}>Dang nhap</Link>,
+      key: "login",
+      icon: <LoginOutlined />,
+    },
+    {
+      label: "Welcome blabla",
+      key: "setting",
+      icon: <AliwangwangOutlined />,
+      children: [{ label: "Dang xuat", key: "logout" }],
+    },
   ];
   return (
     <Menu

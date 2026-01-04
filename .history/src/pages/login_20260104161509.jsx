@@ -79,12 +79,9 @@ const LoginPage = () => {
               name="password"
               rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
             >
-              <Input.Password
-                placeholder="Nhập mật khẩu"
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") form.submit();
-                }}
-              />
+              <Input.Password placeholder="Nhập mật khẩu" onKeyDown={(event) => {if(event.key === 'Enter')
+                form.submit();
+              }}/>
             </Form.Item>
 
             <Form.Item>

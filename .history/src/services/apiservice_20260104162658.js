@@ -96,5 +96,5 @@ export {
   updateUserAvatarAPI,
   registerUserAPI,
   handleLogin,
-  getAccountAPI,
+  get
 };

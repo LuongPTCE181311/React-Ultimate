@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { Menu } from "antd";
 import {
-  AliwangwangOutlined,
   BookOutlined,
   HomeOutlined,
-  LoginOutlined,
+  SettingOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { useContext, useState } from "react";
@@ -35,26 +34,20 @@ const Header = () => {
       key: "books",
       icon: <BookOutlined />,
     },
-
-    ...(!user.id
-      ? [
-          {
-            label: <Link to={"/login"}>Dang nhap</Link>,
-            key: "login",
-            icon: <LoginOutlined />,
-          },
-        ]
-      : []),
-    ...(user.id
-      ? [
-          {
-            label: `Welcome ${user.fullName}`,
-            key: "setting",
-            icon: <AliwangwangOutlined />,
-            children: [{ label: "Dang xuat", key: "logout" }],
-          },
-        ]
-      : []),
+    {
+      label: <Link to={"/resgister"}>Books</Link>,
+      key: "books",
+      icon: <BookOutlined />,
+    },
+    {
+      label: "Setting",
+      key: "setting",
+      icon: <SettingOutlined />,
+      children: [
+        { label: <Link to={"/login"}>Login</Link>, key: "login" },
+        { label: <Link to={"/logout"}>Logout</Link>, key: "logout" },
+      ],
+    },
   ];
   return (
     <Menu

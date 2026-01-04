@@ -36,7 +36,7 @@ const Header = () => {
       icon: <BookOutlined />,
     },
 
-    ...(!user.id
+    ...(!user._id
       ? [
           {
             label: <Link to={"/login"}>Dang nhap</Link>,
@@ -45,16 +45,12 @@ const Header = () => {
           },
         ]
       : []),
-    ...(user.id
-      ? [
-          {
-            label: `Welcome ${user.fullName}`,
-            key: "setting",
-            icon: <AliwangwangOutlined />,
-            children: [{ label: "Dang xuat", key: "logout" }],
-          },
-        ]
-      : []),
+    {
+      label: `Welcome ${user.fullName}`,
+      key: "setting",
+      icon: <AliwangwangOutlined />,
+      children: [{ label: "Dang xuat", key: "logout" }],
+    },
   ];
   return (
     <Menu

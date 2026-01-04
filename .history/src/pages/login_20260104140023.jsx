@@ -17,7 +17,7 @@ const LoginPage = () => {
     if (res.data) {
       message.success("dang nhap thanh cong");
       setLoading(false);
-      navigate("/")
+      navigate
     } else {
       notification.error({
         message: "Error Login",

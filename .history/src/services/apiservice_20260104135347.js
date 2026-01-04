@@ -76,7 +76,7 @@ const handleLogin = (email, password) => {
   const data = {
     username: email,
     password: password,
-    delay: 2000,
+    // delay: 5000
   };
   return axios.post(URL_BACKEND, data);
 };

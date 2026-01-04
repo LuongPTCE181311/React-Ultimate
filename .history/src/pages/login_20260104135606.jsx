@@ -1,7 +1,7 @@
 import { Button, Form, Input, Typography, Space, Col, message, notification } from "antd";
 import { Divider } from "antd";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { handleLogin } from "../services/apiservice";
 import { useState } from "react";
 
@@ -9,15 +9,11 @@ const { Title, Text } = Typography;
 
 const LoginPage = () => {
   const [form] = Form.useForm();
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const [isDone, setIsDone] = useState(false);
   const onFinish = async (values) => {
-    setLoading(true);
     const res = await handleLogin(values.email, values.password);
     if (res.data) {
       message.success("dang nhap thanh cong");
-      setLoading(false);
-      navigate("/")
     } else {
       notification.error({
         message: "Error Login",
@@ -75,7 +71,7 @@ const LoginPage = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <Button type="primary" onClick={() => form.submit()} loading={loading}>
+                <Button type="primary" onClick={() => form.submit()} loading={true}>
                   Login
                 </Button>
 

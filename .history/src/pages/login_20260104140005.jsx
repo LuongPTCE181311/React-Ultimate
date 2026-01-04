@@ -10,14 +10,13 @@ const { Title, Text } = Typography;
 const LoginPage = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const nevigate = useNavigate()
   const onFinish = async (values) => {
     setLoading(true);
     const res = await handleLogin(values.email, values.password);
     if (res.data) {
       message.success("dang nhap thanh cong");
       setLoading(false);
-      navigate("/")
     } else {
       notification.error({
         message: "Error Login",

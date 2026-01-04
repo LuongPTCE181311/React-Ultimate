@@ -1,30 +1,25 @@
-import { Button, Form, Input, Typography, Space, Col, message, notification } from "antd";
+import { Button, Form, Input, Typography, Space, Col, message } from "antd";
 import { Divider } from "antd";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { handleLogin } from "../services/apiservice";
-import { useState } from "react";
 
 const { Title, Text } = Typography;
 
 const LoginPage = () => {
   const [form] = Form.useForm();
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const onFinish = async (values) => {
-    setLoading(true);
+  try {
     const res = await handleLogin(values.email, values.password);
-    if (res.data) {
-      message.success("dang nhap thanh cong");
-      setLoading(false);
-      navigate("/")
-    } else {
-      notification.error({
-        message: "Error Login",
-        description: JSON.stringify(res.message),
-      });
-    }
-  };
+
+    message.success("Đăng nhập thành công");
+    console.log("Login response:", res.data);
+  } catch (error) {
+    console.log("Login error:", error);
+    message.error("Email hoặc mật khẩu không đúng");
+  }
+};
+
 
   return (
     <div
@@ -75,7 +70,7 @@ const LoginPage = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <Button type="primary" onClick={() => form.submit()} loading={loading}>
+                <Button type="primary" onClick={() => form.submit()}>
                   Login
                 </Button>
 

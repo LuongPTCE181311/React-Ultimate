@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BookTable from "../components/book/book.table";
 import { fetchAllBookAPI } from "../services/apiservice";
-// import BookModal from "../components/book/create.book.modal";
+import BookModal from "../components/book/create.book.modal";
 import CreateBookUncontrol from "../components/book/create.book.uncontrol";
 
 const BookPage = () => {

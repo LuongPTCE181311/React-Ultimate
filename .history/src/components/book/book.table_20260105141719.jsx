@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
 import DetailBook from "./book.detail";

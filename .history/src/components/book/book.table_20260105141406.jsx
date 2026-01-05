@@ -1,24 +1,13 @@
-/* eslint-disable react/prop-types */
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
 import DetailBook from "./book.detail";
 import { useState } from "react";
-import UpdateBookModalControled from "./update.book.controled";
 const BookTable = (props) => {
   // eslint-disable-next-line react/prop-types
-  const {
-    current,
-    pageSize,
-    dataBooks,
-    total,
-    setCurrent,
-    setPageSize,
-    loadBook,
-  } = props;
+  const { current, pageSize, dataBooks, total, setCurrent, setPageSize, loadBook } =
+    props;
   const [openDrawerDetailBook, setOpenDrawerDetailBook] = useState(false);
   const [dataBookDetail, setDataBookDetail] = useState(null);
-  const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
-  const [dataUpdate, setDataUpdate] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const onChange = (pagination, filters, sorter, extra) => {
     if (pagination && pagination.current) {
@@ -86,13 +75,9 @@ const BookTable = (props) => {
       // eslint-disable-next-line no-unused-vars
       render: (_, record) => (
         <div style={{ display: "flex", gap: "20px" }}>
-          <EditOutlined
-            style={{ cursor: "pointer", color: "orange" }}
-            onClick={() => {
-              setIsModalUpdateOpen(true);
-              setDataUpdate(record);
-            }}
-          />
+          <EditOutlined style={{ cursor: "pointer", color: "orange" }}
+          
+           />
           <DeleteOutlined style={{ cursor: "pointer", color: "red" }} />
         </div>
       ),
@@ -148,13 +133,6 @@ const BookTable = (props) => {
         openDrawerDetailBook={openDrawerDetailBook}
         setDataBookDetail={setDataBookDetail}
         dataBookDetail={dataBookDetail}
-        loadBook={loadBook}
-      />
-      <UpdateBookModalControled
-        setDataUpdate={setDataUpdate}
-        dataUpdate={dataUpdate}
-        isModalUpdateOpen={isModalUpdateOpen}
-        setIsModalUpdateOpen={setIsModalUpdateOpen}
         loadBook={loadBook}
       />
     </>

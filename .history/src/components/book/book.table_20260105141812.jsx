@@ -7,6 +7,7 @@ import UpdateBookModalControled from "./update.book.controled";
 const BookTable = (props) => {
   // eslint-disable-next-line react/prop-types
   const {
+    
     current,
     pageSize,
     dataBooks,

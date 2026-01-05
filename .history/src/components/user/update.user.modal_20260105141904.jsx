@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { updateUserAPI } from "../../services/apiservice";
 
 const UpdateUserModal = (props) => {
-  const {}
+  const 
   const [mainText, setMainText] = useState("");
   const [author, setAuthor] = useState("");
   const [price, setPrice] = useState("");

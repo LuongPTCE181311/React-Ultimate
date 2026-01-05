@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
 import DetailBook from "./book.detail";
@@ -7,6 +6,7 @@ import UpdateBookModalControled from "./update.book.controled";
 const BookTable = (props) => {
   // eslint-disable-next-line react/prop-types
   const {
+    
     current,
     pageSize,
     dataBooks,

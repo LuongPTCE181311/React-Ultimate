@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
 import DetailBook from "./book.detail";
 import { useState } from "react";
-import UpdateBookModalControled from "./update.book.controled";
 const BookTable = (props) => {
   // eslint-disable-next-line react/prop-types
   const {
@@ -150,13 +148,7 @@ const BookTable = (props) => {
         dataBookDetail={dataBookDetail}
         loadBook={loadBook}
       />
-      <UpdateBookModalControled
-        setDataUpdate={setDataUpdate}
-        dataUpdate={dataUpdate}
-        isModalUpdateOpen={isModalUpdateOpen}
-        setIsModalUpdateOpen={setIsModalUpdateOpen}
-        loadBook={loadBook}
-      />
+      <Upa
     </>
   );
 };

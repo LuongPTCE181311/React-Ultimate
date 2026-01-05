@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
 import DetailBook from "./book.detail";
 import { useState } from "react";
-import UpdateBookModalControled from "./update.book.controled";
 const BookTable = (props) => {
   // eslint-disable-next-line react/prop-types
   const {
@@ -17,8 +15,6 @@ const BookTable = (props) => {
   } = props;
   const [openDrawerDetailBook, setOpenDrawerDetailBook] = useState(false);
   const [dataBookDetail, setDataBookDetail] = useState(null);
-  const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
-  const [dataUpdate, setDataUpdate] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const onChange = (pagination, filters, sorter, extra) => {
     if (pagination && pagination.current) {
@@ -148,13 +144,6 @@ const BookTable = (props) => {
         openDrawerDetailBook={openDrawerDetailBook}
         setDataBookDetail={setDataBookDetail}
         dataBookDetail={dataBookDetail}
-        loadBook={loadBook}
-      />
-      <UpdateBookModalControled
-        setDataUpdate={setDataUpdate}
-        dataUpdate={dataUpdate}
-        isModalUpdateOpen={isModalUpdateOpen}
-        setIsModalUpdateOpen={setIsModalUpdateOpen}
         loadBook={loadBook}
       />
     </>

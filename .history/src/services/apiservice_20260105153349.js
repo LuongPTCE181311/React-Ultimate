@@ -152,5 +152,5 @@ export {
   logoutAPI,
   createBookAPI,
   updateBookAPI,
-  deleteBookAPT,
+  deleteBookAPT
 };

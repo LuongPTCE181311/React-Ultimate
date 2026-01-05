@@ -22,8 +22,8 @@ const BookTable = (props) => {
   const [dataUpdate, setDataUpdate] = useState(null);
   // eslint-disable-next-line no-unused-vars
 
-  const handleDeleteBook = async (id) => {
-    const res = await deleteBookAPT(id);
+  const handleDeleteBook = async(id) => {
+    const res = deleteBookAPT(id);
     if (res.data) {
       notification.success({
         message: "delete Book",
@@ -33,11 +33,10 @@ const BookTable = (props) => {
     } else {
       notification.error({
         message: "delete user",
-        description: "xoa user that bai",
+        description: "Xoa user that bai",
       });
     }
   };
-  // eslint-disable-next-line no-unused-vars
   const onChange = (pagination, filters, sorter, extra) => {
     if (pagination && pagination.current) {
       if (+pagination.current !== +current) {

@@ -23,7 +23,7 @@ const BookTable = (props) => {
   // eslint-disable-next-line no-unused-vars
 
   const handleDeleteBook = async (id) => {
-    const res = await deleteBookAPT(id);
+    const res = deleteBookAPT(id);
     if (res.data) {
       notification.success({
         message: "delete Book",
@@ -33,7 +33,7 @@ const BookTable = (props) => {
     } else {
       notification.error({
         message: "delete user",
-        description: "xoa user that bai",
+        description: JSON.stringify(res.data.message),
       });
     }
   };

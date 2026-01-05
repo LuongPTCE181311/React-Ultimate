@@ -134,7 +134,7 @@ const updateBookAPI = (
 };
 
 const deleteBookAPT = (id) => {
-  const URL_BACKEND = `/api/v1/book/${id}`;
+  const URL_BACKEND = `/api/v1/user/${id}`;
   return axios.delete(URL_BACKEND);
 };
 
@@ -152,5 +152,4 @@ export {
   logoutAPI,
   createBookAPI,
   updateBookAPI,
-  deleteBookAPT,
 };

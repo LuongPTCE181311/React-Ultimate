@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import { notification, Popconfirm, Table } from "antd";
+import { Popconfirm, Table } from "antd";
 import DetailBook from "./book.detail";
 import { useState } from "react";
 import UpdateBookModalControled from "./update.book.controled";
-import { deleteBookAPT } from "../../services/apiservice";
 const BookTable = (props) => {
   // eslint-disable-next-line react/prop-types
   const {
@@ -22,22 +21,9 @@ const BookTable = (props) => {
   const [dataUpdate, setDataUpdate] = useState(null);
   // eslint-disable-next-line no-unused-vars
 
-  const handleDeleteBook = async (id) => {
-    const res = await deleteBookAPT(id);
-    if (res.data) {
-      notification.success({
-        message: "delete Book",
-        description: "Xoa book thanh cong",
-      });
-      await loadBook();
-    } else {
-      notification.error({
-        message: "delete user",
-        description: "xoa user that bai",
-      });
-    }
+  const handleDeleteBook = (id) => {
+    const res 
   };
-  // eslint-disable-next-line no-unused-vars
   const onChange = (pagination, filters, sorter, extra) => {
     if (pagination && pagination.current) {
       if (+pagination.current !== +current) {

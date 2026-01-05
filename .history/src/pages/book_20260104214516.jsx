@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import BookTable from "../components/book/book.table";
 import { fetchAllBookAPI } from "../services/apiservice";
-import BookModal from "../components/book/create.book.modal";
 
 const BookPage = () => {
   const [dataBooks, setDataBook] = useState([]);
@@ -25,7 +24,7 @@ const BookPage = () => {
   };
   return (
     <div style={{ padding: "20px" }}>
-      <BookModal loadBook={loadBook}/>
+      <BookTable />
       <BookTable
         current={current}
         pageSize={pageSize}

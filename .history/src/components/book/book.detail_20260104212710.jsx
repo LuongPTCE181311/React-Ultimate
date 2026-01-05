@@ -2,8 +2,12 @@
 import { Drawer } from "antd";
 
 const DetailBook = (props) => {
-  const { setOpenDrawerDetailBook, openDrawerDetailBook, dataBookDetail } =
-    props;
+  const {
+    setOpenDrawerDetailBook,
+    openDrawerDetailBook,
+    setDataBookDetail,
+    dataBookDetail,
+  } = props;
 
   const onClose = () => {
     setOpenDrawerDetailBook(false);
@@ -27,13 +31,10 @@ const DetailBook = (props) => {
           <br />
           <p>The loai: {dataBookDetail.category}</p>
           <br />
-          <p>
-            Gia Tien:{" "}
-            {new Intl.NumberFormat("vi-VN", {
-              style: "currency",
-              currency: "VND",
-            }).format(dataBookDetail.price)}
-          </p>
+          <p>Gia Tien: {new Intl.NumberFormat("vi-VN", {
+            style: "currency",
+            currency: "VND",
+          }).format(dataBookDetail.price)}</p>
           <br />
           <p>So luong: {dataBookDetail.quantity}</p>
           <br />

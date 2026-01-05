@@ -91,14 +91,7 @@ const logoutAPI = () => {
   return axios.post(URL_BACKEND);
 };
 
-const createBookAPI = (
-  thumbnail,
-  mainText,
-  author,
-  price,
-  quantity,
-  category
-) => {
+const createBookAPI = (thumbnail, mainText, author, price, quantity, category) => {
   const URL_BACKEND = "/api/v1/book";
   const data = {
     thumbnail: thumbnail,
@@ -110,6 +103,7 @@ const createBookAPI = (
   };
   return axios.post(URL_BACKEND, data);
 };
+
 
 export {
   createUserAPI,
@@ -123,5 +117,5 @@ export {
   handleLogin,
   getAccountAPI,
   logoutAPI,
-  createBookAPI,
+  
 };

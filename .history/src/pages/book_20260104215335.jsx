@@ -25,7 +25,7 @@ const BookPage = () => {
   };
   return (
     <div style={{ padding: "20px" }}>
-      <BookModal loadBook={loadBook}/>
+      <BookModal loadBook/>
       <BookTable
         current={current}
         pageSize={pageSize}

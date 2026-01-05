@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Input, Modal, notification, Select } from "antd";
 import { useEffect, useState } from "react";
-import { handleUploadFile, updateBookAPI } from "../../services/apiservice";
+import { handleUploadFile } from "../../services/apiservice";
 import { InputNumber } from "antd";
 
 const UpdateBookModalControled = (props) => {
@@ -39,7 +39,7 @@ const UpdateBookModalControled = (props) => {
   }, [dataUpdate]);
 
   const updateBook = async (newThumbnail) => {
-    const res = await updateBookAPI(
+    const res = await UpdateBookModalControled(
       id,
       mainText,
       author,
@@ -84,8 +84,8 @@ const UpdateBookModalControled = (props) => {
           description: JSON.stringify(resUploadFile.message),
         });
       }
+      await updateBook(newThumbnail);
     }
-    await updateBook(newThumbnail);
   };
 
   const resetCloseModel = () => {

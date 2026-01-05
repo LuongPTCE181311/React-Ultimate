@@ -111,15 +111,7 @@ const createBookAPI = (
   return axios.post(URL_BACKEND, data);
 };
 
-const updateBookAPI = (
-  _id,
-  mainText,
-  author,
-  price,
-  quantity,
-  category,
-  thumbnail
-) => {
+const updateBookAPI = (_id, mainText, author, price, quantity, category) => {
   const URL_BACKEND = "/api/v1/book";
   const data = {
     _id: _id,
@@ -128,7 +120,6 @@ const updateBookAPI = (
     price: price,
     quantity: quantity,
     category: category,
-    thumbnail: thumbnail,
   };
   return axios.put(URL_BACKEND, data);
 };

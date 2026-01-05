@@ -84,8 +84,8 @@ const UpdateBookModalControled = (props) => {
           description: JSON.stringify(resUploadFile.message),
         });
       }
+      await updateBook(newThumbnail);
     }
-    await updateBook(newThumbnail);
   };
 
   const resetCloseModel = () => {

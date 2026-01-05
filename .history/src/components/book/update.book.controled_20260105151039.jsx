@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Input, Modal, notification, Select } from "antd";
 import { useEffect, useState } from "react";
-import { handleUploadFile, updateBookAPI } from "../../services/apiservice";
+import { handleUploadFile } from "../../services/apiservice";
 import { InputNumber } from "antd";
 
 const UpdateBookModalControled = (props) => {
@@ -39,7 +39,7 @@ const UpdateBookModalControled = (props) => {
   }, [dataUpdate]);
 
   const updateBook = async (newThumbnail) => {
-    const res = await updateBookAPI(
+    const res = await UpdateBookModalControled(
       id,
       mainText,
       author,
@@ -49,12 +49,12 @@ const UpdateBookModalControled = (props) => {
       newThumbnail
     );
     if (res.data) {
-      resetCloseModel();
-      await loadBook();
+      
       notification.success({
         message: "create Book",
         description: "Update Book thanh cong",
       });
+      
     } else {
       notification.error({
         message: "Update book",
@@ -71,21 +71,21 @@ const UpdateBookModalControled = (props) => {
       });
       return;
     }
-    let newThumbnail;
+    let newThumnail;
     if (!selectedFile && preview) {
-      newThumbnail = dataUpdate.thumbnail;
+      newThumnail = dataUpdate.thumbnail;
     } else {
       const resUploadFile = await handleUploadFile(selectedFile, "book");
       if (resUploadFile.data) {
-        newThumbnail = resUploadFile.data.fileUploaded;
+        newThumnail = resUploadFile.data.fileUploaded;
       } else {
         notification.error({
           message: "error upload file",
           description: JSON.stringify(resUploadFile.message),
         });
       }
+      await updateBook(newThumnail);
     }
-    await updateBook(newThumbnail);
   };
 
   const resetCloseModel = () => {
@@ -122,7 +122,7 @@ const UpdateBookModalControled = (props) => {
         onOk={() => handleClickBtn()}
         onCancel={() => resetCloseModel()}
         maskClosable={false}
-        okText={"Update"}
+        okText={"Create"}
       >
         <div style={{ display: "flex", gap: "10px", flexDirection: "column" }}>
           <div>

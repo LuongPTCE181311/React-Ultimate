@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Input, Modal, notification, Select } from "antd";
 import { useEffect, useState } from "react";
-import { handleUploadFile, updateBookAPI } from "../../services/apiservice";
+import { handleUploadFile } from "../../services/apiservice";
 import { InputNumber } from "antd";
 
 const UpdateBookModalControled = (props) => {
@@ -39,7 +39,7 @@ const UpdateBookModalControled = (props) => {
   }, [dataUpdate]);
 
   const updateBook = async (newThumbnail) => {
-    const res = await updateBookAPI(
+    const res = await UpdateBookModalControled(
       id,
       mainText,
       author,
@@ -71,21 +71,21 @@ const UpdateBookModalControled = (props) => {
       });
       return;
     }
-    let newThumbnail;
+    let newThumnail;
     if (!selectedFile && preview) {
-      newThumbnail = dataUpdate.thumbnail;
+      newThumnail = dataUpdate.thumbnail;
     } else {
       const resUploadFile = await handleUploadFile(selectedFile, "book");
       if (resUploadFile.data) {
-        newThumbnail = resUploadFile.data.fileUploaded;
+        newThumnail = resUploadFile.data.fileUploaded;
       } else {
         notification.error({
           message: "error upload file",
           description: JSON.stringify(resUploadFile.message),
         });
       }
+      await updateBook(newThumnail);
     }
-    await updateBook(newThumbnail);
   };
 
   const resetCloseModel = () => {

@@ -4,13 +4,23 @@ import { useEffect, useState } from "react";
 import { updateUserAPI } from "../../services/apiservice";
 
 const UpdateUserModal = (props) => {
-  const [fullName, setFullName] = useState("");
-  const [id, setId] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const { loadUser } = props;
+  const {
+    setDataUpdate,
+    dataUpdate,
+    isModalUpdateOpen,
+    setIsModalUpdateOpen,
+    loadBook,
+  } = props;
+  const {id, setId} = useState("")
+  const [mainText, setMainText] = useState("");
+  const [author, setAuthor] = useState("");
+  const [price, setPrice] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [category, setCategory] = useState("");
 
-  const { isModalUpdateOpen, setIsModalUpdateOpen, dataUpdate, setDataUpdate } =
-    props;
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [preview, setPreview] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (dataUpdate) {

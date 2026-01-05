@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Input, Modal, notification, Select } from "antd";
 import { useEffect, useState } from "react";
-import { handleUploadFile, updateBookAPI } from "../../services/apiservice";
+import { handleUploadFile } from "../../services/apiservice";
 import { InputNumber } from "antd";
 
 const UpdateBookModalControled = (props) => {
@@ -30,66 +30,48 @@ const UpdateBookModalControled = (props) => {
       setPrice(dataUpdate.price);
       setQuantity(dataUpdate.quantity);
       setCategory(dataUpdate.category);
-      setPreview(
-        `${import.meta.env.VITE_BACKEND_URL}/images/book/${
-          dataUpdate.thumbnail
-        }`
-      );
+      setPreview(`${import.meta.env.VITE_BACKEND_URL}/images/book/${dataUpdate.thumbnail}`)
     }
   }, [dataUpdate]);
-
-  const updateBook = async (newThumbnail) => {
-    const res = await updateBookAPI(
-      id,
-      mainText,
-      author,
-      price,
-      quantity,
-      category,
-      newThumbnail
-    );
-    if (res.data) {
-      resetCloseModel();
-      await loadBook();
-      notification.success({
-        message: "create Book",
-        description: "Update Book thanh cong",
-      });
-    } else {
-      notification.error({
-        message: "Update book",
-        description: JSON.stringify(res.message),
-      });
-    }
-  };
   // eslint-disable-next-line react/prop-types
   const handleClickBtn = async () => {
-    if (!selectedFile && !preview) {
+    if (!selectedFile) {
       notification.error({
         message: "Error create book",
         description: "Vui long upload anh thumbnail",
       });
       return;
     }
-    let newThumbnail;
-    if (!selectedFile && preview) {
-      newThumbnail = dataUpdate.thumbnail;
-    } else {
-      const resUploadFile = await handleUploadFile(selectedFile, "book");
-      if (resUploadFile.data) {
-        newThumbnail = resUploadFile.data.fileUploaded;
+    const resUploadFile = await handleUploadFile(selectedFile, "book");
+    if (resUploadFile.data) {
+      const newThumnail = resUploadFile.data.fileUploaded;
+      const res = await UpdateBookModalControled(
+        id,
+        mainText,
+        author,
+        price,
+        quantity,
+        category,
+        newThumnail
+      );
+      if (res.data) {
+        notification.success({
+          message: "create Book",
+          description: "Update Book thanh cong",
+        });
+        resetCloseModel();
+        await loadBook();
       } else {
         notification.error({
-          message: "error upload file",
-          description: JSON.stringify(resUploadFile.message),
+          message: "Update book",
+          description: JSON.stringify(res.message),
         });
       }
     }
-    await updateBook(newThumbnail);
   };
 
   const resetCloseModel = () => {
-    setId("");
+    set
     setIsModalUpdateOpen(false);
     setMainText("");
     setAuthor("");
@@ -98,7 +80,6 @@ const UpdateBookModalControled = (props) => {
     setCategory("");
     setSelectedFile(null);
     setPreview(null);
-    setDataUpdate(null);
   };
 
   const handleOnChangeFile = (e) => {
@@ -122,7 +103,7 @@ const UpdateBookModalControled = (props) => {
         onOk={() => handleClickBtn()}
         onCancel={() => resetCloseModel()}
         maskClosable={false}
-        okText={"Update"}
+        okText={"Create"}
       >
         <div style={{ display: "flex", gap: "10px", flexDirection: "column" }}>
           <div>

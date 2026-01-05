@@ -85,7 +85,6 @@ const UpdateBookModalControled = (props) => {
         });
       }
     }
-    await updateBook(newThumbnail);
   };
 
   const resetCloseModel = () => {
